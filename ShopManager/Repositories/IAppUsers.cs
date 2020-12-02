@@ -25,7 +25,6 @@ namespace ShopManager.Repositories
         public AppUsersManager(DBModel db)
         {
             _db = db;
-            
         }
 
         public async Task<List<UserListViewModel>> GetUsersList()
@@ -42,7 +41,6 @@ namespace ShopManager.Repositories
                 li.Add(item);
 
             }
-
             return li.ToList();
         }
     }
