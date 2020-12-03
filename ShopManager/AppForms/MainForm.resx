@@ -117,23 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc</value>
+  <assembly alias="DevExpress.Data.v18.2" name="DevExpress.Data.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
+  <data name="UnitsListButton.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v18.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFpEZXZFeHByZXNzLkRhdGEudjE4LjIsIFZlcnNpb249MTguMi4x
+        MC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWFhZmIyMGE4ZThjNGQyY2MFAQAAAB1E
+        ZXZFeHByZXNzLlV0aWxzLlN2Zy5TdmdJbWFnZQEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADNAQAAAu+7
+        vzw/eG1sIHZlcnNpb249JzEuMCcgZW5jb2Rpbmc9J1VURi04Jz8+DQo8c3ZnIHg9IjBweCIgeT0iMHB4
+        IiB2aWV3Qm94PSIwIDAgMzIgMzIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3Jn
+        LzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgZW5hYmxl
+        LWJhY2tncm91bmQ9Im5ldyAwIDAgMzIgMzIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGlkPSJMYXllcl8x
+        Ij4NCiAgPGcgaWQ9IkxhYmVsIj4NCiAgICA8cGF0aCBkPSJNMjksOEgxMGwtOCw4bDgsOGgxOWMwLjUs
+        MCwxLTAuNSwxLTFWOUMzMCw4LjUsMjkuNSw4LDI5LDh6IE0xMCwxOGMtMS4xLDAtMi0wLjktMi0yYzAt
+        MS4xLDAuOS0yLDItMiAgIHMyLDAuOSwyLDJDMTIsMTcuMSwxMS4xLDE4LDEwLDE4eiIgZmlsbD0iI0ZG
+        QjExNSIgY2xhc3M9IlllbGxvdyIgLz4NCiAgPC9nPg0KPC9zdmc+Cw==
+</value>
   </data>
-  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\save.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc</value>
-  </data>
-  <data name="bo_product" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bo_product.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc</value>
-  </data>
-  <data name="actions_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\actions_refresh.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc</value>
-  </data>
-  <data name="editextractsource" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editextractsource.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc</value>
-  </data>
-  <data name="close1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc</value>
+  <data name="barButtonItem1.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v18.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFpEZXZFeHByZXNzLkRhdGEudjE4LjIsIFZlcnNpb249MTguMi4x
+        MC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWFhZmIyMGE4ZThjNGQyY2MFAQAAAB1E
+        ZXZFeHByZXNzLlV0aWxzLlN2Zy5TdmdJbWFnZQEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABIBQAAAu+7
+        vzw/eG1sIHZlcnNpb249JzEuMCcgZW5jb2Rpbmc9J1VURi04Jz8+DQo8c3ZnIHg9IjBweCIgeT0iMHB4
+        IiB2aWV3Qm94PSIwIDAgMzIgMzIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3Jn
+        LzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgZW5hYmxl
+        LWJhY2tncm91bmQ9Im5ldyAwIDAgMzIgMzIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGlkPSJMYXllcl8x
+        Ij4NCiAgPGcgaWQ9IkRlcGFydG1lbnQiPg0KICAgIDxnIG9wYWNpdHk9IjAuNzUiIGNsYXNzPSJzdDEi
+        Pg0KICAgICAgPHBhdGggZD0iTTE2LjMsOS43QzE2LjIsOS4zLDE1LjksOSwxNiw4LjZjMC4xLTAuMiww
+        LjMtMC4yLDAuNC0wLjJDMTUuNSw1LjMsMTYsMiwyMCwyYzQuMywwLDQuNiwyLjUsNC42LDIuNSAgICBz
+        Mi40LTAuMiwwLjksMy45YzAuMS0wLjEsMC4zLTAuMSwwLjQsMC4yYzAuMSwwLjQtMC4xLDAuNy0wLjIs
+        MS4yYy0wLjIsMC40LDAuMSwxLjQtMC43LDEuM3YwLjFjLTAuNCwxLjktMS43LDQuMS0zLjksNC4xICAg
+        IGMtMi4yLDAtMy40LTIuMi0zLjktNC4xYzAtMC4xLDAtMC4yLDAtMC4yQzE2LjMsMTEuMiwxNi41LDEw
+        LjIsMTYuMyw5Ljd6IE0yNCwxNmMtMC42LDEtMS42LDIuNy0zLDIuN1MxOC42LDE3LDE4LDE2ICAgIGMt
+        MC4xLDAuMi0wLjMsMC4zLTAuNCwwLjRjMCwwLDAsMCwwLDBsMCwwLjFsMCwwYy0wLjEsMS0wLjUsMS43
+        LTAuOSwyYy0wLjMsMC44LTAuNiwxLjUtMS4xLDIuMmwwLDBjMC4zLDAuMywwLjksMC41LDEuNiwwLjgg
+        ICAgYzEuMSwwLjQsMi44LDAuOSwzLjgsMi40aDl2LTIuM0MzMCwxNi43LDI1LjcsMTguMywyNCwxNnoi
+        IGZpbGw9IiM3MjcyNzIiIG9wYWNpdHk9IjAuNzUiIGNsYXNzPSJCbGFjayIgLz4NCiAgICA8L2c+DQog
+        ICAgPHBhdGggZD0iTTYuMywxNS43QzYuMiwxNS4zLDUuOSwxNSw2LDE0LjZjMC4xLTAuMiwwLjMtMC4y
+        LDAuNC0wLjJDNS41LDExLjMsNiw4LDEwLDhjNC4zLDAsNC42LDIuNSw0LjYsMi41ICAgczIuNC0wLjIs
+        MC45LDMuOWMwLjEtMC4xLDAuMy0wLjEsMC40LDAuMmMwLjEsMC40LTAuMSwwLjctMC4yLDEuMmMtMC4y
+        LDAuNCwwLjEsMS40LTAuNywxLjN2MC4xYy0wLjQsMS45LTEuNyw0LjEtMy45LDQuMSAgIGMtMi4yLDAt
+        My40LTIuMi0zLjktNC4xYzAtMC4xLDAtMC4yLDAtMC4yQzYuMywxNy4yLDYuNSwxNi4yLDYuMywxNS43
+        eiBNMTQsMjJjLTAuNiwxLTEuNiwyLjctMywyLjdTOC42LDIzLDgsMjIgICBjLTEuNywyLjMtNiwwLjct
+        Niw1LjdWMzBoMTh2LTIuM0MyMCwyMi43LDE1LjcsMjQuMywxNCwyMnoiIGZpbGw9IiM3MjcyNzIiIGNs
+        YXNzPSJCbGFjayIgLz4NCiAgPC9nPg0KPC9zdmc+Cw==
+</value>
   </data>
 </root>

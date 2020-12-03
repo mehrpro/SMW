@@ -1,9 +1,4 @@
-﻿
-using AutoMapper;
-using AutoMapper.Configuration;
-using DevExpress.Data;
-using ShopManager.AutoMap;
-using ShopManager.Models;
+﻿using ShopManager.Models;
 using ShopManager.Repositories;
 using StructureMap;
 namespace ShopManager.StructureMapping
@@ -14,8 +9,7 @@ namespace ShopManager.StructureMapping
         {
 
             For<IAppUsersManager>().Use<AppUsersManager>();
-            
-       
+            For<IGoodsClass>().Use<GoodsClass>();//.Ctor<DBModel>("context").Is(new DBModel());
 
             //Entity Framework Context
             For<DBModel>().Use(context => CreateNewContext(context));

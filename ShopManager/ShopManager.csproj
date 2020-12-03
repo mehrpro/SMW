@@ -43,6 +43,7 @@
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.Utils.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
+    <Reference Include="DevExpress.XtraBars.v18.2" />
     <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
     <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=aafb20a8e8c4d2cc" />
@@ -58,6 +59,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -72,14 +74,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppForms\NewGoodsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\NewGoodsForm.Designer.cs">
+      <DependentUpon>NewGoodsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\UnitsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\UnitsForm.Designer.cs">
+      <DependentUpon>UnitsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AppForms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForms\SallerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\SallerForm.Designer.cs">
+      <DependentUpon>SallerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AutoMap\MapConfig.cs" />
     <Compile Include="AutoMap\MappingCFG.cs" />
+    <Compile Include="ExtentionMethod\PublicMessage.cs" />
+    <Compile Include="ExtentionMethod\PublicValues.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,10 +129,25 @@
     <Compile Include="Models\Saller.cs" />
     <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Models\Unit.cs" />
+    <Compile Include="Repositories\GenericClass.cs" />
     <Compile Include="Repositories\IAppUsers.cs" />
+    <Compile Include="Repositories\IGoodsClass.cs" />
     <Compile Include="StructureMapping\TypeRegistery.cs" />
     <Compile Include="ViewModels\AppUsers\AppUserViewModel.cs" />
     <Compile Include="ViewModels\AppUsers\UserListViewModel.cs" />
+    <Compile Include="ViewModels\Goods\ProductViewModel.cs" />
+    <EmbeddedResource Include="AppForms\NewGoodsForm.resx">
+      <DependentUpon>NewGoodsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\UnitsForm.resx">
+      <DependentUpon>UnitsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\SallerForm.resx">
+      <DependentUpon>SallerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,7 +179,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ExtentionMethod\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +186,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bo_product.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editextractsource.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close1.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
