@@ -74,6 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppForms\CustomersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\CustomersForm.Designer.cs">
+      <DependentUpon>CustomersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\NewGoodsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,18 @@
     </Compile>
     <Compile Include="AppForms\PurchaseInvoiceForm.Designer.cs">
       <DependentUpon>PurchaseInvoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\SalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\SalesForm.Designer.cs">
+      <DependentUpon>SalesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\StoreProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\StoreProductForm.Designer.cs">
+      <DependentUpon>StoreProductForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AppForms\UnitsForm.cs">
       <SubType>Form</SubType>
@@ -114,51 +132,22 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012021956205_DBCreate.cs" />
-    <Compile Include="Migrations\202012021956205_DBCreate.designer.cs">
-      <DependentUpon>202012021956205_DBCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012041208244_updatePurchaseTable.cs" />
-    <Compile Include="Migrations\202012041208244_updatePurchaseTable.designer.cs">
-      <DependentUpon>202012041208244_updatePurchaseTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012041212308_up.cs" />
-    <Compile Include="Migrations\202012041212308_up.designer.cs">
-      <DependentUpon>202012041212308_up.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012041216102_up2.cs" />
-    <Compile Include="Migrations\202012041216102_up2.designer.cs">
-      <DependentUpon>202012041216102_up2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012041324042_d.cs" />
-    <Compile Include="Migrations\202012041324042_d.designer.cs">
-      <DependentUpon>202012041324042_d.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012041325335_f.cs" />
-    <Compile Include="Migrations\202012041325335_f.designer.cs">
-      <DependentUpon>202012041325335_f.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012041422564_f1.cs" />
-    <Compile Include="Migrations\202012041422564_f1.designer.cs">
-      <DependentUpon>202012041422564_f1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\AppUser.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DBModel.cs" />
-    <Compile Include="Models\Good.cs" />
     <Compile Include="Models\InvoiceType.cs" />
     <Compile Include="Models\Logger.cs" />
     <Compile Include="Models\LogMessage.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\ProductList.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\PurchaseInvoiceDetail.cs" />
     <Compile Include="Models\PurchaseInvoicy.cs" />
     <Compile Include="Models\Saller.cs" />
-    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\StoreProductList.cs" />
     <Compile Include="Models\Unit.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GenericClass.cs" />
     <Compile Include="Repositories\IAppUsers.cs" />
     <Compile Include="Repositories\IGoodsClass.cs" />
@@ -167,11 +156,20 @@
     <Compile Include="ViewModels\AppUsers\UserListViewModel.cs" />
     <Compile Include="ViewModels\Goods\InvoiceTempList.cs" />
     <Compile Include="ViewModels\Goods\ProductViewModel.cs" />
+    <EmbeddedResource Include="AppForms\CustomersForm.resx">
+      <DependentUpon>CustomersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForms\NewGoodsForm.resx">
       <DependentUpon>NewGoodsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\PurchaseInvoiceForm.resx">
       <DependentUpon>PurchaseInvoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\SalesForm.resx">
+      <DependentUpon>SalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\StoreProductForm.resx">
+      <DependentUpon>StoreProductForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UnitsForm.resx">
       <DependentUpon>UnitsForm.cs</DependentUpon>
@@ -184,27 +182,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012021956205_DBCreate.resx">
-      <DependentUpon>202012021956205_DBCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012041208244_updatePurchaseTable.resx">
-      <DependentUpon>202012041208244_updatePurchaseTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012041212308_up.resx">
-      <DependentUpon>202012041212308_up.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012041216102_up2.resx">
-      <DependentUpon>202012041216102_up2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012041324042_d.resx">
-      <DependentUpon>202012041324042_d.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012041325335_f.resx">
-      <DependentUpon>202012041325335_f.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012041422564_f1.resx">
-      <DependentUpon>202012041422564_f1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -231,6 +208,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Migrations\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>

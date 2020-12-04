@@ -151,7 +151,7 @@ namespace ShopManager.AppForms
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(858, 553);
+            this.groupControl1.Size = new System.Drawing.Size(981, 559);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "ثبت فاکتور خرید";
             // 
@@ -159,7 +159,7 @@ namespace ShopManager.AppForms
             // 
             this.dateInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateInvoice.EditValue = null;
-            this.dateInvoice.Location = new System.Drawing.Point(513, 94);
+            this.dateInvoice.Location = new System.Drawing.Point(636, 94);
             this.dateInvoice.Name = "dateInvoice";
             this.dateInvoice.Parmida_ActivePlusMultiKeys = false;
             this.dateInvoice.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -185,7 +185,7 @@ namespace ShopManager.AppForms
             this.InvoiceGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoExEdit1,
             this.RemoveButton});
-            this.InvoiceGridControl.Size = new System.Drawing.Size(485, 489);
+            this.InvoiceGridControl.Size = new System.Drawing.Size(608, 495);
             this.InvoiceGridControl.TabIndex = 13;
             this.InvoiceGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewInvoiceList});
@@ -349,7 +349,7 @@ namespace ShopManager.AppForms
             this.btnNewInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNewInvoice.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnNewInvoice.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnNewInvoice.ImageOptions.SvgImage")));
-            this.btnNewInvoice.Location = new System.Drawing.Point(651, 480);
+            this.btnNewInvoice.Location = new System.Drawing.Point(774, 480);
             this.btnNewInvoice.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewInvoice.Name = "btnNewInvoice";
             this.btnNewInvoice.Size = new System.Drawing.Size(100, 40);
@@ -363,7 +363,7 @@ namespace ShopManager.AppForms
             this.btnCloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCloseButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCloseButton.ImageOptions.SvgImage = global::ShopManager.Properties.Resources.close1;
-            this.btnCloseButton.Location = new System.Drawing.Point(513, 349);
+            this.btnCloseButton.Location = new System.Drawing.Point(636, 349);
             this.btnCloseButton.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseButton.Name = "btnCloseButton";
             this.btnCloseButton.Size = new System.Drawing.Size(85, 40);
@@ -377,7 +377,7 @@ namespace ShopManager.AppForms
             this.btnUnitAdd.Appearance.Options.UseTextOptions = true;
             this.btnUnitAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUnitAdd.ImageOptions.Image")));
             this.btnUnitAdd.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnUnitAdd.Location = new System.Drawing.Point(821, 516);
+            this.btnUnitAdd.Location = new System.Drawing.Point(944, 516);
             this.btnUnitAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnUnitAdd.Name = "btnUnitAdd";
             this.btnUnitAdd.Size = new System.Drawing.Size(26, 26);
@@ -391,7 +391,7 @@ namespace ShopManager.AppForms
             this.btnSallerAdd.Appearance.Options.UseTextOptions = true;
             this.btnSallerAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSallerAdd.ImageOptions.Image")));
             this.btnSallerAdd.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnSallerAdd.Location = new System.Drawing.Point(513, 158);
+            this.btnSallerAdd.Location = new System.Drawing.Point(636, 158);
             this.btnSallerAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnSallerAdd.Name = "btnSallerAdd";
             this.btnSallerAdd.Size = new System.Drawing.Size(26, 26);
@@ -404,7 +404,7 @@ namespace ShopManager.AppForms
             this.btnProductAdd.Appearance.Options.UseTextOptions = true;
             this.btnProductAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnProductAdd.ImageOptions.Image")));
             this.btnProductAdd.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnProductAdd.Location = new System.Drawing.Point(513, 190);
+            this.btnProductAdd.Location = new System.Drawing.Point(636, 190);
             this.btnProductAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnProductAdd.Name = "btnProductAdd";
             this.btnProductAdd.Size = new System.Drawing.Size(26, 26);
@@ -415,7 +415,7 @@ namespace ShopManager.AppForms
             // 
             this.btnAddToList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddToList.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddToList.ImageOptions.SvgImage")));
-            this.btnAddToList.Location = new System.Drawing.Point(602, 349);
+            this.btnAddToList.Location = new System.Drawing.Point(725, 349);
             this.btnAddToList.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddToList.Name = "btnAddToList";
             this.btnAddToList.Size = new System.Drawing.Size(85, 40);
@@ -427,7 +427,7 @@ namespace ShopManager.AppForms
             // 
             this.btnSaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveButton.ImageOptions.SvgImage = global::ShopManager.Properties.Resources.save;
-            this.btnSaveButton.Location = new System.Drawing.Point(691, 349);
+            this.btnSaveButton.Location = new System.Drawing.Point(814, 349);
             this.btnSaveButton.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveButton.Name = "btnSaveButton";
             this.btnSaveButton.Size = new System.Drawing.Size(85, 40);
@@ -438,7 +438,7 @@ namespace ShopManager.AppForms
             // labelControl6
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Location = new System.Drawing.Point(782, 321);
+            this.labelControl6.Location = new System.Drawing.Point(905, 321);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(26, 20);
             this.labelControl6.TabIndex = 0;
@@ -447,7 +447,7 @@ namespace ShopManager.AppForms
             // txtFroshe
             // 
             this.txtFroshe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFroshe.Location = new System.Drawing.Point(544, 286);
+            this.txtFroshe.Location = new System.Drawing.Point(667, 286);
             this.txtFroshe.Name = "txtFroshe";
             this.txtFroshe.Parmida_ActivePlusMultiKeys = false;
             this.txtFroshe.Properties.Mask.EditMask = "n0";
@@ -459,7 +459,7 @@ namespace ShopManager.AppForms
             // labelControl11
             // 
             this.labelControl11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl11.Location = new System.Drawing.Point(513, 289);
+            this.labelControl11.Location = new System.Drawing.Point(636, 289);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(22, 20);
             this.labelControl11.TabIndex = 0;
@@ -468,7 +468,7 @@ namespace ShopManager.AppForms
             // txtCurrency
             // 
             this.txtCurrency.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCurrency.Location = new System.Drawing.Point(544, 254);
+            this.txtCurrency.Location = new System.Drawing.Point(667, 254);
             this.txtCurrency.Name = "txtCurrency";
             this.txtCurrency.Parmida_ActivePlusMultiKeys = false;
             this.txtCurrency.Properties.Mask.EditMask = "n0";
@@ -484,7 +484,7 @@ namespace ShopManager.AppForms
             // labelControl10
             // 
             this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl10.Location = new System.Drawing.Point(782, 289);
+            this.labelControl10.Location = new System.Drawing.Point(905, 289);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(32, 20);
             this.labelControl10.TabIndex = 0;
@@ -493,7 +493,7 @@ namespace ShopManager.AppForms
             // labelControl8
             // 
             this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl8.Location = new System.Drawing.Point(514, 257);
+            this.labelControl8.Location = new System.Drawing.Point(637, 257);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(22, 20);
             this.labelControl8.TabIndex = 0;
@@ -502,7 +502,7 @@ namespace ShopManager.AppForms
             // labelControl5
             // 
             this.labelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl5.Location = new System.Drawing.Point(783, 257);
+            this.labelControl5.Location = new System.Drawing.Point(906, 257);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(14, 20);
             this.labelControl5.TabIndex = 0;
@@ -511,7 +511,7 @@ namespace ShopManager.AppForms
             // labelControl4
             // 
             this.labelControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl4.Location = new System.Drawing.Point(783, 225);
+            this.labelControl4.Location = new System.Drawing.Point(906, 225);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(24, 20);
             this.labelControl4.TabIndex = 0;
@@ -520,7 +520,7 @@ namespace ShopManager.AppForms
             // labelControl3
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(783, 193);
+            this.labelControl3.Location = new System.Drawing.Point(906, 193);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(15, 20);
             this.labelControl3.TabIndex = 0;
@@ -529,7 +529,7 @@ namespace ShopManager.AppForms
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(783, 161);
+            this.labelControl2.Location = new System.Drawing.Point(906, 161);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(43, 20);
             this.labelControl2.TabIndex = 0;
@@ -539,7 +539,7 @@ namespace ShopManager.AppForms
             // 
             this.txtInvoiceNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtInvoiceNumber.EditValue = "";
-            this.txtInvoiceNumber.Location = new System.Drawing.Point(513, 126);
+            this.txtInvoiceNumber.Location = new System.Drawing.Point(636, 126);
             this.txtInvoiceNumber.Name = "txtInvoiceNumber";
             this.txtInvoiceNumber.Parmida_ActivePlusMultiKeys = false;
             this.txtInvoiceNumber.Properties.MaxLength = 100;
@@ -552,7 +552,7 @@ namespace ShopManager.AppForms
             // labelControl9
             // 
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl9.Location = new System.Drawing.Point(783, 129);
+            this.labelControl9.Location = new System.Drawing.Point(906, 129);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(66, 20);
             this.labelControl9.TabIndex = 0;
@@ -562,7 +562,7 @@ namespace ShopManager.AppForms
             // 
             this.txtTypeInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTypeInvoice.EditValue = "خرید";
-            this.txtTypeInvoice.Location = new System.Drawing.Point(513, 62);
+            this.txtTypeInvoice.Location = new System.Drawing.Point(636, 62);
             this.txtTypeInvoice.Name = "txtTypeInvoice";
             this.txtTypeInvoice.Parmida_ActivePlusMultiKeys = false;
             this.txtTypeInvoice.Properties.ReadOnly = true;
@@ -572,7 +572,7 @@ namespace ShopManager.AppForms
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(783, 65);
+            this.labelControl7.Location = new System.Drawing.Point(906, 65);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(51, 20);
             this.labelControl7.TabIndex = 0;
@@ -581,7 +581,7 @@ namespace ShopManager.AppForms
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(783, 97);
+            this.labelControl1.Location = new System.Drawing.Point(906, 97);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(58, 20);
             this.labelControl1.TabIndex = 0;
@@ -595,7 +595,7 @@ namespace ShopManager.AppForms
             0,
             0,
             0});
-            this.numPerc.Location = new System.Drawing.Point(724, 286);
+            this.numPerc.Location = new System.Drawing.Point(847, 286);
             this.numPerc.Name = "numPerc";
             this.numPerc.Parmida_ActivePlusMultiKeys = false;
             this.numPerc.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -624,7 +624,7 @@ namespace ShopManager.AppForms
             0,
             0,
             0});
-            this.numNumbers.Location = new System.Drawing.Point(513, 318);
+            this.numNumbers.Location = new System.Drawing.Point(636, 318);
             this.numNumbers.Name = "numNumbers";
             this.numNumbers.Parmida_ActivePlusMultiKeys = false;
             this.numNumbers.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -645,7 +645,7 @@ namespace ShopManager.AppForms
             // cbxSallerList
             // 
             this.cbxSallerList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxSallerList.Location = new System.Drawing.Point(544, 158);
+            this.cbxSallerList.Location = new System.Drawing.Point(667, 158);
             this.cbxSallerList.Name = "cbxSallerList";
             this.cbxSallerList.Parmida_ActivePlusMultiKeys = false;
             this.cbxSallerList.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -784,7 +784,7 @@ namespace ShopManager.AppForms
             // cbxProductList
             // 
             this.cbxProductList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxProductList.Location = new System.Drawing.Point(544, 190);
+            this.cbxProductList.Location = new System.Drawing.Point(667, 190);
             this.cbxProductList.Name = "cbxProductList";
             this.cbxProductList.Parmida_ActivePlusMultiKeys = false;
             this.cbxProductList.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -896,7 +896,7 @@ namespace ShopManager.AppForms
             // cbxUnites
             // 
             this.cbxUnites.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxUnites.Location = new System.Drawing.Point(513, 222);
+            this.cbxUnites.Location = new System.Drawing.Point(636, 222);
             this.cbxUnites.Name = "cbxUnites";
             this.cbxUnites.Parmida_ActivePlusMultiKeys = false;
             this.cbxUnites.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -1030,7 +1030,7 @@ namespace ShopManager.AppForms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCloseButton;
-            this.ClientSize = new System.Drawing.Size(858, 553);
+            this.ClientSize = new System.Drawing.Size(981, 559);
             this.Controls.Add(this.groupControl1);
             this.Name = "PurchaseInvoiceForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

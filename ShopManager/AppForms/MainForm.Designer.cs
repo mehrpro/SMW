@@ -38,11 +38,19 @@ namespace ShopManager.AppForms
             this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
             this.SallersButton = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnStore = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSales = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDaySales = new DevExpress.XtraBars.BarButtonItem();
+            this.btnReturnProduct = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.GoodsRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.btnCustomers = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,14 +65,21 @@ namespace ShopManager.AppForms
             this.barStaticItem2,
             this.barStaticItem3,
             this.SallersButton,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.btnStore,
+            this.btnSales,
+            this.btnDaySales,
+            this.btnReturnProduct,
+            this.barButtonItem2,
+            this.btnCustomers});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(2);
-            this.ribbonControl1.MaxItemId = 10;
+            this.ribbonControl1.MaxItemId = 16;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.GoodsRibbonPage});
-            this.ribbonControl1.Size = new System.Drawing.Size(759, 175);
+            this.GoodsRibbonPage,
+            this.ribbonPage1});
+            this.ribbonControl1.Size = new System.Drawing.Size(765, 174);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // NewGoodsButton
@@ -118,6 +133,42 @@ namespace ShopManager.AppForms
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
+            // btnStore
+            // 
+            this.btnStore.Caption = "موجودی کالا";
+            this.btnStore.Id = 10;
+            this.btnStore.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnStore.ImageOptions.SvgImage")));
+            this.btnStore.Name = "btnStore";
+            // 
+            // btnSales
+            // 
+            this.btnSales.Caption = "فاکتور فروش";
+            this.btnSales.Id = 11;
+            this.btnSales.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSales.ImageOptions.SvgImage")));
+            this.btnSales.Name = "btnSales";
+            this.btnSales.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSales_ItemClick);
+            // 
+            // btnDaySales
+            // 
+            this.btnDaySales.Caption = "دفتر فروش روزانه";
+            this.btnDaySales.Id = 12;
+            this.btnDaySales.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDaySales.ImageOptions.SvgImage")));
+            this.btnDaySales.Name = "btnDaySales";
+            // 
+            // btnReturnProduct
+            // 
+            this.btnReturnProduct.Caption = "برگشت کالا";
+            this.btnReturnProduct.Id = 13;
+            this.btnReturnProduct.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnReturnProduct.ImageOptions.SvgImage")));
+            this.btnReturnProduct.Name = "btnReturnProduct";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "فاکتور مشتری";
+            this.barButtonItem2.Id = 14;
+            this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
             // GoodsRibbonPage
             // 
             this.GoodsRibbonPage.Appearance.Options.UseTextOptions = true;
@@ -132,6 +183,7 @@ namespace ShopManager.AppForms
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.NewGoodsButton);
             this.ribbonPageGroup1.ItemLinks.Add(this.UnitsListButton);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnStore);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "مدیریت کالا";
@@ -144,28 +196,54 @@ namespace ShopManager.AppForms
             this.ribbonPageGroup2.ShowCaptionButton = false;
             this.ribbonPageGroup2.Text = "تامین کنندگان";
             // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup3});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "فروش";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnSales);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnDaySales);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnReturnProduct);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnCustomers);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.ShowCaptionButton = false;
+            this.ribbonPageGroup3.Text = "فروش کالا";
+            // 
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem2);
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem3);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 485);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 486);
             this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(2);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(759, 36);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(765, 35);
             // 
             // ribbonPage2
             // 
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "ribbonPage2";
             // 
+            // btnCustomers
+            // 
+            this.btnCustomers.Caption = "مشتریان";
+            this.btnCustomers.Id = 15;
+            this.btnCustomers.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCustomers_ItemClick);
+            // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 521);
+            this.ClientSize = new System.Drawing.Size(765, 521);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
@@ -199,5 +277,13 @@ namespace ShopManager.AppForms
         private DevExpress.XtraBars.BarButtonItem SallersButton;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnStore;
+        private DevExpress.XtraBars.BarButtonItem btnSales;
+        private DevExpress.XtraBars.BarButtonItem btnDaySales;
+        private DevExpress.XtraBars.BarButtonItem btnReturnProduct;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.BarButtonItem btnCustomers;
     }
 }

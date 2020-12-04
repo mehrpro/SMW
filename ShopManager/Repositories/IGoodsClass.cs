@@ -38,6 +38,11 @@ namespace ShopManager.Repositories
         /// <param name="tempLists"></param>
         /// <returns></returns>
         Task<bool> AddPurchaseInvoice(List<InvoiceTempList> tempLists);
+        /// <summary>
+        /// لیست کالاهای موجود برای فروش
+        /// </summary>
+        /// <returns></returns>
+        Task<List<StoreProductList>> GetStoreProduct();
 
     }
 
@@ -127,30 +132,47 @@ namespace ShopManager.Repositories
             {
                 try
                 {
-                    foreach (var item in tempLists)
+                    var newItem = new PurchaseInvoicy
                     {
-                        var newItem = new PurchaseInvoicy
+                        InvoiceDate = tempLists[0].InvoiceDate,
+                        InvoiceNumber = tempLists[0].InvoiceNumber,
+                        InvoiceType_FK = tempLists[0].InvoiceType_FK,
+                        Saller_FK = tempLists[0].Saller_FK,
+                        DateRegister = now,
+                        Enabled = true,
+                        AppUser_FK = tempLists[0].AppUser_FK,
+                    };
+                    _context.PurchaseInvoicies.Add(newItem);
+                    var result =  await _context.SaveChangesAsync();
+                    if (result > 0)
+                    {
+                        foreach (var item in tempLists)
                         {
-                            PurchaseInvoiceId = 0,
-                            InvoiceDate = item.InvoiceDate,
-                            InvoiceType_FK = item.InvoiceType_FK,
-                            ProductList_FK = item.ProductList_FK,
-                            Saller_FK = item.Saller_FK,
-                            PurchasePrice = item.PurchasePrice,
-                            Unit_FK = item.Unit_FK,
-                            Numbers = item.Numbers,
-                            SumCurrency = item.SumCurrency,
-                            DateRegister = now,
-                            InvoiceNumber = item.InvoiceNumber,
-                            Enabled = true,
-                            AppUser_FK = item.AppUser_FK,
-                        };
-                        _context.PurchaseInvoicies.Add(newItem);
+                            var newDetail = new PurchaseInvoiceDetail
+                            {
+                                PurchaseInvoiceId_FK = newItem.PurchaseInvoiceId,
+                                ProductList_FK = item.ProductList_FK,
+                                PurchasePrice = item.PurchasePrice,
+                                Numbers = item.Numbers,
+                                SumCurrency = item.SumCurrency,
+                                Enabled = true,
+                            };
+                            _context.PurchaseInvoiceDetails.Add(newDetail);
+                            var newStore = new StoreProductList
+                            {
+                                ProductList_FK = item.ProductList_FK,
+                                PurchaseInvoice_FK = newItem.PurchaseInvoiceId,
+                                Price = item.Frosh,
+                                Numbers = item.Numbers,
+                            };
+                            _context.StoreProductLists.Add(newStore);
+                        }
+                        await _context.SaveChangesAsync();
+                        trans.Commit();
+                        return true;
                     }
-                    await _context.SaveChangesAsync();
-                    
-                    trans.Commit();
-                    return true;
+                    trans.Rollback();
+                    return false;
                 }
                 catch 
                 {
@@ -160,6 +182,11 @@ namespace ShopManager.Repositories
             }
 
 
+        }
+
+        public async Task<List<StoreProductList>> GetStoreProduct()
+        {
+            return await _context.StoreProductLists.Include(x=>x.ProductList).Include(x=>x.PurchaseInvoicy).Include(x=>x.PurchaseInvoicy.Saller).ToListAsync();
         }
     }
 }

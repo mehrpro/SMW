@@ -1,8 +1,11 @@
-using System;
-using System.Collections.Generic;
-
 namespace ShopManager.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
     public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,6 +27,8 @@ namespace ShopManager.Models
         public DateTime OrderRegister { get; set; }
 
         public int AppUser_FK { get; set; }
+
+        public double SumPrice { get; set; }
 
         public virtual AppUser AppUser { get; set; }
 

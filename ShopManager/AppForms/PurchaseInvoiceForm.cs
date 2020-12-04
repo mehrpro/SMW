@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
@@ -53,7 +48,7 @@ namespace ShopManager.AppForms
         }
 
 
-        private async void btnCloseButton_Click(object sender, EventArgs e)
+        private  void btnCloseButton_Click(object sender, EventArgs e)
         {
                 Close();
         }
@@ -147,7 +142,8 @@ namespace ShopManager.AppForms
         }
         private void ClearItem()
         {
-            cbxProductList.EditValue = cbxUnites.EditValue = txtCurrency.EditValue = null;
+            cbxProductList.EditValue = cbxUnites.EditValue = 
+                txtCurrency.EditValue =txtInvoiceNumber.EditValue = null;
             numNumbers.EditValue = 0;
 
         }
@@ -194,6 +190,7 @@ namespace ShopManager.AppForms
             ClearItem();
             cbxSallerList.EditValue = null;
             _invoicies = new List<InvoiceTempList>();
+            UpdateInvoiceGridControl();
             
         }
         private void btnNewInvoice_Click(object sender, EventArgs e)
@@ -238,13 +235,9 @@ namespace ShopManager.AppForms
         private void numPerc_EditValueChanged(object sender, EventArgs e)
         {
             if (Convert.ToDouble(txtCurrency.EditValue) > 0)
-            {
                 pre();
-            }
             else
-            {
                 txtFroshe.EditValue = 0;
-            }
         }
     }
 

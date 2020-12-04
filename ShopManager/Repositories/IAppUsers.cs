@@ -33,6 +33,18 @@ namespace ShopManager.Repositories
         /// </summary>
         /// <returns></returns>
         Task<List<Saller>> GetSallerList();
+
+        /// <summary>
+        /// افزودن مشتری جدید
+        /// </summary>
+        /// <param name="customer">مشتری</param>
+        /// <returns></returns>
+        Task<bool> AddNewCustomers(Customer customer);
+        /// <summary>
+        /// لیست مشتریان
+        /// </summary>
+        /// <returns></returns>
+        Task<List<Customer>> GetAllCustomer();
     }
 
     public class AppUsersManager : IAppUsersManager
@@ -97,6 +109,39 @@ namespace ShopManager.Repositories
         public async Task<List<Saller>> GetSallerList()
         {
             return await _context.Sallers.AsNoTracking().ToListAsync();
+        }
+
+        public async Task<bool> AddNewCustomers(Customer customer)
+        {
+            try
+            {
+                if (customer.CustomerId > 0)
+                {
+                    var item = await _context.Customers.FindAsync(customer.CustomerId);
+                    item.CustomerName = customer.CustomerName;
+                    item.CustomerMobile = customer.CustomerMobile;
+                    item.CustomerAddress = customer.CustomerAddress;
+                }
+                else
+                {
+                    customer.DateRegister = DateTime.Now;
+                    customer.Enabled = true;
+                    customer.AppUser_FK = PublicValues.UserID;
+                    _context.Customers.Add(customer);
+                }
+
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public async Task<List<Customer>> GetAllCustomer()
+        {
+            return await _context.Customers.AsNoTracking().ToListAsync();
         }
     }
 }
