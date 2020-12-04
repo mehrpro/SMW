@@ -31,13 +31,13 @@ namespace ShopManager.AppForms
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewGoodsForm));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewGoodsForm));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.ProductListGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -61,6 +61,7 @@ namespace ShopManager.AppForms
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.UnitName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.btnUnitAdd = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductListGridControl)).BeginInit();
@@ -81,6 +82,7 @@ namespace ShopManager.AppForms
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.AutoSize = true;
             this.groupControl1.CaptionImageOptions.SvgImage = global::ShopManager.Properties.Resources.bo_product;
+            this.groupControl1.Controls.Add(this.btnUnitAdd);
             this.groupControl1.Controls.Add(this.ProductListGridControl);
             this.groupControl1.Controls.Add(this.btnCloseButton);
             this.groupControl1.Controls.Add(this.btnSaveButton);
@@ -355,7 +357,7 @@ namespace ShopManager.AppForms
             // cbxUnits
             // 
             this.cbxUnits.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxUnits.Location = new System.Drawing.Point(712, 111);
+            this.cbxUnits.Location = new System.Drawing.Point(742, 111);
             this.cbxUnits.Margin = new System.Windows.Forms.Padding(2);
             this.cbxUnits.Name = "cbxUnits";
             this.cbxUnits.Parmida_ActivePlusMultiKeys = false;
@@ -370,7 +372,7 @@ namespace ShopManager.AppForms
             this.cbxUnits.Properties.PopupFormSize = new System.Drawing.Size(240, 0);
             this.cbxUnits.Properties.PopupSizeable = false;
             this.cbxUnits.Properties.PopupView = this.searchLookUpEdit1View;
-            this.cbxUnits.Size = new System.Drawing.Size(243, 26);
+            this.cbxUnits.Size = new System.Drawing.Size(213, 26);
             this.cbxUnits.TabIndex = 5;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
             conditionValidationRule2.ErrorText = "This value is not valid";
@@ -448,6 +450,19 @@ namespace ShopManager.AppForms
             this.UnitName.Visible = true;
             this.UnitName.VisibleIndex = 0;
             // 
+            // btnUnitAdd
+            // 
+            this.btnUnitAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUnitAdd.Appearance.Options.UseTextOptions = true;
+            this.btnUnitAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUnitAdd.ImageOptions.Image")));
+            this.btnUnitAdd.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnUnitAdd.Location = new System.Drawing.Point(712, 111);
+            this.btnUnitAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUnitAdd.Name = "btnUnitAdd";
+            this.btnUnitAdd.Size = new System.Drawing.Size(26, 26);
+            this.btnUnitAdd.TabIndex = 12;
+            this.btnUnitAdd.Click += new System.EventHandler(this.btnUnitAdd_Click);
+            // 
             // NewGoodsForm
             // 
             this.AcceptButton = this.btnSaveButton;
@@ -507,5 +522,6 @@ namespace ShopManager.AppForms
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
+        private DevExpress.XtraEditors.SimpleButton btnUnitAdd;
     }
 }

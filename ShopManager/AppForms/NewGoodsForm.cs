@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ShopManager.Models;
 using ShopManager.Repositories;
+using ShopManager.StructureMapping;
 using ShopManager.ViewModels.Goods;
 
 namespace ShopManager.AppForms
@@ -19,11 +20,8 @@ namespace ShopManager.AppForms
         {
             _goodsClass = goodsClass;
             InitializeComponent();
-         
             cbxUnits.Properties.DisplayMember = "UnitName";
             cbxUnits.Properties.ValueMember = "UnitId";
-
-
         }
 
         private async void ClearForm()
@@ -90,6 +88,20 @@ namespace ShopManager.AppForms
         private void btnCloseButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        private async Task UnitesList()
+        {
+            cbxUnits.Properties.DataSource = await _goodsClass.GetUnitList();
+        }
+        private async void btnUnitAdd_Click(object sender, EventArgs e)
+        {
+            using (var tempContainer = new StructureMap.Container(new TypeRegistery()))
+            {
+                var instance = tempContainer.GetInstance<UnitsForm>();
+                // instance.WindowState = FormWindowState.Maximized;
+                instance.ShowDialog();
+                await UnitesList();
+            }
         }
     }
 }

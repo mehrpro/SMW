@@ -17,6 +17,7 @@ namespace ShopManager.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int PurchaseInvoiceId { get; set; }
 
+
         public DateTime InvoiceDate { get; set; }
 
         public byte InvoiceType_FK { get; set; }
@@ -29,9 +30,12 @@ namespace ShopManager.Models
 
         public int Unit_FK { get; set; }
 
-        public int Numbers { get; set; }
-
+        public double Numbers { get; set; }
+        
+        public double SumCurrency { get; set; }
         public DateTime DateRegister { get; set; }
+        [StringLength(100)]
+        public string InvoiceNumber { get; set; }
 
         public bool Enabled { get; set; }
 

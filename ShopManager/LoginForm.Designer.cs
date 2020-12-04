@@ -31,23 +31,25 @@ namespace ShopManager
         {
             this.cbxUsers = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.UserName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PasswordTextBox = new DevExpress.XtraEditors.TextEdit();
             this.LoginButton = new DevExpress.XtraEditors.SimpleButton();
             this.CloseButton = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.UserName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cbxUsers.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordTextBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cbxUsers
             // 
-            this.cbxUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxUsers.EditValue = "";
-            this.cbxUsers.Location = new System.Drawing.Point(35, 22);
-            this.cbxUsers.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.cbxUsers.Location = new System.Drawing.Point(158, 21);
+            this.cbxUsers.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbxUsers.Name = "cbxUsers";
             this.cbxUsers.Parmida_ActivePlusMultiKeys = false;
             this.cbxUsers.Properties.Appearance.Options.UseTextOptions = true;
@@ -57,10 +59,10 @@ namespace ShopManager
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxUsers.Properties.NullText = "کاربر را انتخاب کنید";
             this.cbxUsers.Properties.NullValuePrompt = "0";
-            this.cbxUsers.Properties.PopupFormSize = new System.Drawing.Size(219, 0);
+            this.cbxUsers.Properties.PopupFormSize = new System.Drawing.Size(175, 0);
             this.cbxUsers.Properties.PopupView = this.gridLookUpEdit1View;
-            this.cbxUsers.Size = new System.Drawing.Size(219, 30);
-            this.cbxUsers.TabIndex = 0;
+            this.cbxUsers.Size = new System.Drawing.Size(208, 26);
+            this.cbxUsers.TabIndex = 1;
             this.cbxUsers.EditValueChanged += new System.EventHandler(this.cbxUsers_EditValueChanged);
             // 
             // gridLookUpEdit1View
@@ -127,6 +129,78 @@ namespace ShopManager
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // PasswordTextBox
+            // 
+            this.PasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PasswordTextBox.Location = new System.Drawing.Point(158, 52);
+            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.Parmida_ActivePlusMultiKeys = false;
+            this.PasswordTextBox.Properties.Appearance.Options.UseTextOptions = true;
+            this.PasswordTextBox.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.PasswordTextBox.Properties.PasswordChar = '*';
+            this.PasswordTextBox.Size = new System.Drawing.Size(208, 26);
+            this.PasswordTextBox.TabIndex = 3;
+            // 
+            // LoginButton
+            // 
+            this.LoginButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LoginButton.ImageOptions.SvgImage = global::ShopManager.Properties.Resources.actions_refresh;
+            this.LoginButton.Location = new System.Drawing.Point(266, 84);
+            this.LoginButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(100, 40);
+            this.LoginButton.TabIndex = 4;
+            this.LoginButton.Text = "ورود";
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.CloseButton.ImageOptions.SvgImage = global::ShopManager.Properties.Resources.close;
+            this.CloseButton.Location = new System.Drawing.Point(158, 84);
+            this.CloseButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(100, 40);
+            this.CloseButton.TabIndex = 5;
+            this.CloseButton.Text = "بستن";
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl1.Location = new System.Drawing.Point(374, 24);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(24, 20);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "کاربر";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl2.Location = new System.Drawing.Point(374, 55);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(42, 20);
+            this.labelControl2.TabIndex = 2;
+            this.labelControl2.Text = "رمز عبور";
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.EditValue = global::ShopManager.Properties.Resources.unnamed__1_;
+            this.pictureEdit1.Location = new System.Drawing.Point(12, 12);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Parmida_ActivePlusMultiKeys = false;
+            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit1.Size = new System.Drawing.Size(121, 125);
+            this.pictureEdit1.TabIndex = 6;
+            // 
             // UserName
             // 
             this.UserName.Caption = "کاربران";
@@ -135,71 +209,14 @@ namespace ShopManager
             this.UserName.Visible = true;
             this.UserName.VisibleIndex = 0;
             // 
-            // PasswordTextBox
-            // 
-            this.PasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PasswordTextBox.Location = new System.Drawing.Point(35, 59);
-            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Parmida_ActivePlusMultiKeys = false;
-            this.PasswordTextBox.Properties.Appearance.Options.UseTextOptions = true;
-            this.PasswordTextBox.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.PasswordTextBox.Properties.PasswordChar = '*';
-            this.PasswordTextBox.Size = new System.Drawing.Size(219, 30);
-            this.PasswordTextBox.TabIndex = 1;
-            // 
-            // LoginButton
-            // 
-            this.LoginButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LoginButton.ImageOptions.SvgImage = global::ShopManager.Properties.Resources.actions_refresh;
-            this.LoginButton.Location = new System.Drawing.Point(154, 98);
-            this.LoginButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(100, 40);
-            this.LoginButton.TabIndex = 2;
-            this.LoginButton.Text = "ورود";
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
-            // 
-            // CloseButton
-            // 
-            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CloseButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CloseButton.ImageOptions.SvgImage = global::ShopManager.Properties.Resources.close;
-            this.CloseButton.Location = new System.Drawing.Point(35, 98);
-            this.CloseButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(100, 40);
-            this.CloseButton.TabIndex = 3;
-            this.CloseButton.Text = "بستن";
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(264, 25);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(30, 24);
-            this.labelControl1.TabIndex = 4;
-            this.labelControl1.Text = "کاربر";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(264, 62);
-            this.labelControl2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(51, 24);
-            this.labelControl2.TabIndex = 5;
-            this.labelControl2.Text = "رمز عبور";
-            // 
             // LoginForm
             // 
             this.AcceptButton = this.LoginButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseButton;
-            this.ClientSize = new System.Drawing.Size(350, 160);
+            this.ClientSize = new System.Drawing.Size(428, 147);
+            this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.CloseButton);
@@ -207,7 +224,7 @@ namespace ShopManager
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.cbxUsers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LoginForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "فرم ورود";
@@ -215,6 +232,7 @@ namespace ShopManager
             ((System.ComponentModel.ISupportInitialize)(this.cbxUsers.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordTextBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +248,6 @@ namespace ShopManager
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraGrid.Columns.GridColumn UserName;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
     }
 }

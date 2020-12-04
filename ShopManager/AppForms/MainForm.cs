@@ -17,6 +17,7 @@ namespace ShopManager.AppForms
             foreach (var c in this.MdiChildren) c.Close();
             var frm = _container.GetInstance<NewGoodsForm>();
             frm.MdiParent = this;
+            frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
             frm.ControlBox = false;
             frm.WindowState = FormWindowState.Maximized;
@@ -35,6 +36,19 @@ namespace ShopManager.AppForms
             var frm = _container.GetInstance<SallerForm>();
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.ControlBox = false;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (var c in this.MdiChildren) c.Close();
+            var frm = _container.GetInstance<PurchaseInvoiceForm>();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.FormBorderStyle = FormBorderStyle.None;
             frm.ControlBox = false;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();

@@ -22,7 +22,7 @@ namespace ShopManager.Models
 
         public double Price { get; set; }
 
-        public int Numbers { get; set; }
+        public double Numbers { get; set; }
 
         public int AppUser_FK { get; set; }
 

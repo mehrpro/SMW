@@ -32,6 +32,12 @@ namespace ShopManager.Repositories
         /// <param name="unit">واحد جدید</param>
         /// <returns></returns>
         Task<bool> AddNewUnit(Unit unit);
+        /// <summary>
+        /// افزودن فاکتور خرید جدید 
+        /// </summary>
+        /// <param name="tempLists"></param>
+        /// <returns></returns>
+        Task<bool> AddPurchaseInvoice(List<InvoiceTempList> tempLists);
 
     }
 
@@ -112,6 +118,48 @@ namespace ShopManager.Repositories
             {
                 return false;
             }
+        }
+       
+        public async Task<bool> AddPurchaseInvoice(List<InvoiceTempList> tempLists)
+        {
+            var now = DateTime.Now;
+            using (var trans = _context.Database.BeginTransaction())
+            {
+                try
+                {
+                    foreach (var item in tempLists)
+                    {
+                        var newItem = new PurchaseInvoicy
+                        {
+                            PurchaseInvoiceId = 0,
+                            InvoiceDate = item.InvoiceDate,
+                            InvoiceType_FK = item.InvoiceType_FK,
+                            ProductList_FK = item.ProductList_FK,
+                            Saller_FK = item.Saller_FK,
+                            PurchasePrice = item.PurchasePrice,
+                            Unit_FK = item.Unit_FK,
+                            Numbers = item.Numbers,
+                            SumCurrency = item.SumCurrency,
+                            DateRegister = now,
+                            InvoiceNumber = item.InvoiceNumber,
+                            Enabled = true,
+                            AppUser_FK = item.AppUser_FK,
+                        };
+                        _context.PurchaseInvoicies.Add(newItem);
+                    }
+                    await _context.SaveChangesAsync();
+                    
+                    trans.Commit();
+                    return true;
+                }
+                catch 
+                {
+                    trans.Rollback();
+                    return false;
+                }
+            }
+
+
         }
     }
 }

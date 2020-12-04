@@ -80,6 +80,12 @@
     <Compile Include="AppForms\NewGoodsForm.Designer.cs">
       <DependentUpon>NewGoodsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForms\PurchaseInvoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\PurchaseInvoiceForm.Designer.cs">
+      <DependentUpon>PurchaseInvoiceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\UnitsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,30 @@
     <Compile Include="Migrations\202012021956205_DBCreate.designer.cs">
       <DependentUpon>202012021956205_DBCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012041208244_updatePurchaseTable.cs" />
+    <Compile Include="Migrations\202012041208244_updatePurchaseTable.designer.cs">
+      <DependentUpon>202012041208244_updatePurchaseTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012041212308_up.cs" />
+    <Compile Include="Migrations\202012041212308_up.designer.cs">
+      <DependentUpon>202012041212308_up.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012041216102_up2.cs" />
+    <Compile Include="Migrations\202012041216102_up2.designer.cs">
+      <DependentUpon>202012041216102_up2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012041324042_d.cs" />
+    <Compile Include="Migrations\202012041324042_d.designer.cs">
+      <DependentUpon>202012041324042_d.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012041325335_f.cs" />
+    <Compile Include="Migrations\202012041325335_f.designer.cs">
+      <DependentUpon>202012041325335_f.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012041422564_f1.cs" />
+    <Compile Include="Migrations\202012041422564_f1.designer.cs">
+      <DependentUpon>202012041422564_f1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\AppUser.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -135,9 +165,13 @@
     <Compile Include="StructureMapping\TypeRegistery.cs" />
     <Compile Include="ViewModels\AppUsers\AppUserViewModel.cs" />
     <Compile Include="ViewModels\AppUsers\UserListViewModel.cs" />
+    <Compile Include="ViewModels\Goods\InvoiceTempList.cs" />
     <Compile Include="ViewModels\Goods\ProductViewModel.cs" />
     <EmbeddedResource Include="AppForms\NewGoodsForm.resx">
       <DependentUpon>NewGoodsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\PurchaseInvoiceForm.resx">
+      <DependentUpon>PurchaseInvoiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UnitsForm.resx">
       <DependentUpon>UnitsForm.cs</DependentUpon>
@@ -153,6 +187,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012021956205_DBCreate.resx">
       <DependentUpon>202012021956205_DBCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012041208244_updatePurchaseTable.resx">
+      <DependentUpon>202012041208244_updatePurchaseTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012041212308_up.resx">
+      <DependentUpon>202012041212308_up.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012041216102_up2.resx">
+      <DependentUpon>202012041216102_up2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012041324042_d.resx">
+      <DependentUpon>202012041324042_d.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012041325335_f.resx">
+      <DependentUpon>202012041325335_f.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012041422564_f1.resx">
+      <DependentUpon>202012041422564_f1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -198,6 +250,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close1.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
