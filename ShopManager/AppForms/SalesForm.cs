@@ -19,12 +19,14 @@ namespace ShopManager.AppForms
     {
         private IAppUsersManager _appUsers;
         private IGoodsClass _goodsClass;
+        private List<StoreProductViewModel> _storeProduct;
         public SalesForm(IAppUsersManager appUsers, IGoodsClass goodsClass)
         {
             _appUsers = appUsers;
             _goodsClass = goodsClass;
             InitializeComponent();
             dateInvoice.DateTime = DateTime.Today;
+            _storeProduct = new List<StoreProductViewModel>();
 
             cbxCustomers.Properties.DisplayMember = "CustomerName";
             cbxCustomers.Properties.ValueMember = "CustomerId";
@@ -32,6 +34,21 @@ namespace ShopManager.AppForms
             cbxStoreProduct.Properties.DisplayMember = "ProductList.ProductName";
             cbxStoreProduct.Properties.ValueMember = "StoreId";
 
+        }
+
+
+        private void CheckSalerGridControl()
+        {
+            if (_storeProduct.Count > 0)
+            {
+                cbxCustomers.Enabled = false;
+
+
+            }
+            else
+            {
+                cbxCustomers.Enabled = true;
+            }
         }
 
         private async void btnCustomerAdd_Click(object sender, EventArgs e)
@@ -51,6 +68,11 @@ namespace ShopManager.AppForms
         private async Task UpdateStoreProduct()
         {
             cbxStoreProduct.Properties.DataSource = await _goodsClass.GetStoreProduct();
+        }
+
+        private async Task UpdateGridControl()
+        {
+            SalerGridControl.DataSource = _storeProduct;
         }
 
         private async void SalesForm_Load(object sender, EventArgs e)
@@ -96,7 +118,10 @@ namespace ShopManager.AppForms
             return newModel;
         }
 
-
+        private void ClearItem()
+        {
+            cbxStoreProduct.EditValue = null;
+        }
         private void btnCloseButton_Click(object sender, EventArgs e)
         {
             Close();
@@ -104,7 +129,18 @@ namespace ShopManager.AppForms
 
         private void btnAddToList_Click(object sender, EventArgs e)
         {
+            if (!dxValidationProvider1.Validate())
+            {
+                PublicMessage.ComplateFormMessage(Text);
+            }
+            else
+            {
+                _storeProduct.Add(GetViewModel());
+                ClearItem();
+                UpdateGridControl();
 
+
+            }
         }
     }
 }

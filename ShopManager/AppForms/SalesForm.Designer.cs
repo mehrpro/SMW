@@ -29,6 +29,7 @@ namespace ShopManager.AppForms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesForm));
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -36,7 +37,7 @@ namespace ShopManager.AppForms
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.InvoiceGridControl = new DevExpress.XtraGrid.GridControl();
+            this.SalerGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridViewInvoiceList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSelect = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RemoveButton = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -81,9 +82,10 @@ namespace ShopManager.AppForms
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.InvoiceGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalerGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewInvoiceList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RemoveButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
@@ -99,6 +101,7 @@ namespace ShopManager.AppForms
             ((System.ComponentModel.ISupportInitialize)(this.txtUnits.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumbers.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -106,7 +109,7 @@ namespace ShopManager.AppForms
             this.groupControl1.CaptionImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("groupControl1.CaptionImageOptions.SvgImage")));
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.InvoiceGridControl);
+            this.groupControl1.Controls.Add(this.SalerGridControl);
             this.groupControl1.Controls.Add(this.dateInvoice);
             this.groupControl1.Controls.Add(this.txtTypeInvoice);
             this.groupControl1.Controls.Add(this.labelControl7);
@@ -135,20 +138,20 @@ namespace ShopManager.AppForms
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "فاکتور فروش";
             // 
-            // InvoiceGridControl
+            // SalerGridControl
             // 
-            this.InvoiceGridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.SalerGridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.InvoiceGridControl.Location = new System.Drawing.Point(12, 42);
-            this.InvoiceGridControl.MainView = this.gridViewInvoiceList;
-            this.InvoiceGridControl.Name = "InvoiceGridControl";
-            this.InvoiceGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.SalerGridControl.Location = new System.Drawing.Point(12, 42);
+            this.SalerGridControl.MainView = this.gridViewInvoiceList;
+            this.SalerGridControl.Name = "SalerGridControl";
+            this.SalerGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoExEdit1,
             this.RemoveButton});
-            this.InvoiceGridControl.Size = new System.Drawing.Size(542, 395);
-            this.InvoiceGridControl.TabIndex = 0;
-            this.InvoiceGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.SalerGridControl.Size = new System.Drawing.Size(542, 395);
+            this.SalerGridControl.TabIndex = 0;
+            this.SalerGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewInvoiceList});
             // 
             // gridViewInvoiceList
@@ -215,7 +218,7 @@ namespace ShopManager.AppForms
             this.gridColumn1,
             this.gridColumn3,
             this.gridColumn7});
-            this.gridViewInvoiceList.GridControl = this.InvoiceGridControl;
+            this.gridViewInvoiceList.GridControl = this.SalerGridControl;
             this.gridViewInvoiceList.Name = "gridViewInvoiceList";
             this.gridViewInvoiceList.OptionsBehavior.ReadOnly = true;
             this.gridViewInvoiceList.OptionsFind.AlwaysVisible = true;
@@ -784,7 +787,7 @@ namespace ShopManager.AppForms
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.InvoiceGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalerGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewInvoiceList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RemoveButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
@@ -800,6 +803,7 @@ namespace ShopManager.AppForms
             ((System.ComponentModel.ISupportInitialize)(this.txtUnits.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumbers.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -828,7 +832,7 @@ namespace ShopManager.AppForms
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtUnits;
-        private DevExpress.XtraGrid.GridControl InvoiceGridControl;
+        private DevExpress.XtraGrid.GridControl SalerGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewInvoiceList;
         private DevExpress.XtraGrid.Columns.GridColumn colSelect;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit RemoveButton;
@@ -852,5 +856,6 @@ namespace ShopManager.AppForms
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
     }
 }
