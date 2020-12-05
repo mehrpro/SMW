@@ -9,12 +9,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>ShopManager</RootNamespace>
     <AssemblyName>ShopManager</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -132,6 +133,15 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012050614495_DBCreate.cs" />
+    <Compile Include="Migrations\202012050614495_DBCreate.designer.cs">
+      <DependentUpon>202012050614495_DBCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012050715315_dbcreaeAndUpdateSeed.cs" />
+    <Compile Include="Migrations\202012050715315_dbcreaeAndUpdateSeed.designer.cs">
+      <DependentUpon>202012050715315_dbcreaeAndUpdateSeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppUser.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\DBModel.cs" />
@@ -156,6 +166,7 @@
     <Compile Include="ViewModels\AppUsers\UserListViewModel.cs" />
     <Compile Include="ViewModels\Goods\InvoiceTempList.cs" />
     <Compile Include="ViewModels\Goods\ProductViewModel.cs" />
+    <Compile Include="ViewModels\Goods\StoreProductViewModel.cs" />
     <EmbeddedResource Include="AppForms\CustomersForm.resx">
       <DependentUpon>CustomersForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +194,12 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012050614495_DBCreate.resx">
+      <DependentUpon>202012050614495_DBCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012050715315_dbcreaeAndUpdateSeed.resx">
+      <DependentUpon>202012050715315_dbcreaeAndUpdateSeed.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -208,7 +225,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Migrations\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>

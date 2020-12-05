@@ -82,7 +82,7 @@ namespace ShopManager.Repositories
                 return product;
 
             }
-            catch (Exception e)
+            catch 
             {
                 //Logger Insert
                 return null;
@@ -119,7 +119,7 @@ namespace ShopManager.Repositories
                 await _context.SaveChangesAsync();
                 return true;
             }
-            catch (Exception e)
+            catch 
             {
                 return false;
             }
@@ -186,7 +186,7 @@ namespace ShopManager.Repositories
 
         public async Task<List<StoreProductList>> GetStoreProduct()
         {
-            return await _context.StoreProductLists.Include(x=>x.ProductList).Include(x=>x.PurchaseInvoicy).Include(x=>x.PurchaseInvoicy.Saller).ToListAsync();
+            return await _context.StoreProductLists.Include(x=>x.ProductList).Include(x=>x.ProductList.Unit).Include(x=>x.PurchaseInvoicy).Include(x=>x.PurchaseInvoicy.Saller).ToListAsync();
         }
     }
 }

@@ -43,6 +43,7 @@ namespace ShopManager.AppForms
             this.btnDaySales = new DevExpress.XtraBars.BarButtonItem();
             this.btnReturnProduct = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCustomers = new DevExpress.XtraBars.BarButtonItem();
             this.GoodsRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -50,7 +51,6 @@ namespace ShopManager.AppForms
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.btnCustomers = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,7 +79,7 @@ namespace ShopManager.AppForms
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.GoodsRibbonPage,
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(765, 174);
+            this.ribbonControl1.Size = new System.Drawing.Size(759, 175);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // NewGoodsButton
@@ -169,6 +169,14 @@ namespace ShopManager.AppForms
             this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
             this.barButtonItem2.Name = "barButtonItem2";
             // 
+            // btnCustomers
+            // 
+            this.btnCustomers.Caption = "مشتریان";
+            this.btnCustomers.Id = 15;
+            this.btnCustomers.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnCustomers.ImageOptions.SvgImage")));
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCustomers_ItemClick);
+            // 
             // GoodsRibbonPage
             // 
             this.GoodsRibbonPage.Appearance.Options.UseTextOptions = true;
@@ -219,31 +227,23 @@ namespace ShopManager.AppForms
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem2);
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem3);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 486);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 485);
             this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(2);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(765, 35);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(759, 36);
             // 
             // ribbonPage2
             // 
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "ribbonPage2";
             // 
-            // btnCustomers
-            // 
-            this.btnCustomers.Caption = "مشتریان";
-            this.btnCustomers.Id = 15;
-            this.btnCustomers.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
-            this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCustomers_ItemClick);
-            // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 521);
+            this.ClientSize = new System.Drawing.Size(759, 521);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;

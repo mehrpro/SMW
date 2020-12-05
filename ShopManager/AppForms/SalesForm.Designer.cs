@@ -78,6 +78,9 @@ namespace ShopManager.AppForms
             this.txtUnits = new DevExpress.XtraEditors.TextEdit();
             this.txtNumbers = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InvoiceGridControl)).BeginInit();
@@ -95,11 +98,14 @@ namespace ShopManager.AppForms
             ((System.ComponentModel.ISupportInitialize)(this.txtCurrency.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUnits.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumbers.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
             this.groupControl1.CaptionImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("groupControl1.CaptionImageOptions.SvgImage")));
+            this.groupControl1.Controls.Add(this.labelControl3);
+            this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.InvoiceGridControl);
             this.groupControl1.Controls.Add(this.dateInvoice);
             this.groupControl1.Controls.Add(this.txtTypeInvoice);
@@ -116,6 +122,7 @@ namespace ShopManager.AppForms
             this.groupControl1.Controls.Add(this.label4);
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.label2);
+            this.groupControl1.Controls.Add(this.textEdit1);
             this.groupControl1.Controls.Add(this.txtCurrency);
             this.groupControl1.Controls.Add(this.txtUnits);
             this.groupControl1.Controls.Add(this.txtNumbers);
@@ -124,7 +131,7 @@ namespace ShopManager.AppForms
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(915, 455);
+            this.groupControl1.Size = new System.Drawing.Size(909, 449);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "فاکتور فروش";
             // 
@@ -139,8 +146,8 @@ namespace ShopManager.AppForms
             this.InvoiceGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoExEdit1,
             this.RemoveButton});
-            this.InvoiceGridControl.Size = new System.Drawing.Size(548, 401);
-            this.InvoiceGridControl.TabIndex = 22;
+            this.InvoiceGridControl.Size = new System.Drawing.Size(542, 395);
+            this.InvoiceGridControl.TabIndex = 0;
             this.InvoiceGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewInvoiceList});
             // 
@@ -301,7 +308,7 @@ namespace ShopManager.AppForms
             // 
             this.dateInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateInvoice.EditValue = null;
-            this.dateInvoice.Location = new System.Drawing.Point(573, 90);
+            this.dateInvoice.Location = new System.Drawing.Point(567, 90);
             this.dateInvoice.Name = "dateInvoice";
             this.dateInvoice.Parmida_ActivePlusMultiKeys = false;
             this.dateInvoice.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -312,45 +319,45 @@ namespace ShopManager.AppForms
             this.dateInvoice.Properties.Parmida_CheckEmptyFillDateOnEnter = false;
             this.dateInvoice.Properties.ReadOnly = true;
             this.dateInvoice.Size = new System.Drawing.Size(263, 26);
-            this.dateInvoice.TabIndex = 21;
+            this.dateInvoice.TabIndex = 3;
             // 
             // txtTypeInvoice
             // 
             this.txtTypeInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTypeInvoice.EditValue = "فروش";
-            this.txtTypeInvoice.Location = new System.Drawing.Point(573, 58);
+            this.txtTypeInvoice.Location = new System.Drawing.Point(567, 58);
             this.txtTypeInvoice.Name = "txtTypeInvoice";
             this.txtTypeInvoice.Parmida_ActivePlusMultiKeys = false;
             this.txtTypeInvoice.Properties.ReadOnly = true;
             this.txtTypeInvoice.Size = new System.Drawing.Size(263, 26);
-            this.txtTypeInvoice.TabIndex = 20;
+            this.txtTypeInvoice.TabIndex = 1;
             // 
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(842, 61);
+            this.labelControl7.Location = new System.Drawing.Point(836, 61);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(51, 20);
-            this.labelControl7.TabIndex = 18;
+            this.labelControl7.TabIndex = 0;
             this.labelControl7.Text = "نوع فاکتور";
             // 
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(842, 93);
+            this.labelControl1.Location = new System.Drawing.Point(836, 93);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(58, 20);
-            this.labelControl1.TabIndex = 19;
+            this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "تاریخ فاکتور";
             // 
             // labelControl6
             // 
             this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl6.Location = new System.Drawing.Point(842, 221);
+            this.labelControl6.Location = new System.Drawing.Point(836, 221);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(26, 20);
-            this.labelControl6.TabIndex = 16;
-            this.labelControl6.Text = "تعداد";
+            this.labelControl6.Size = new System.Drawing.Size(37, 20);
+            this.labelControl6.TabIndex = 13;
+            this.labelControl6.Text = "سفارش";
             // 
             // numNumbers
             // 
@@ -360,7 +367,7 @@ namespace ShopManager.AppForms
             0,
             0,
             0});
-            this.numNumbers.Location = new System.Drawing.Point(718, 218);
+            this.numNumbers.Location = new System.Drawing.Point(745, 218);
             this.numNumbers.Name = "numNumbers";
             this.numNumbers.Parmida_ActivePlusMultiKeys = false;
             this.numNumbers.Properties.Appearance.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
@@ -371,41 +378,43 @@ namespace ShopManager.AppForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.numNumbers.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.numNumbers.Properties.Mask.EditMask = "d";
-            this.numNumbers.Size = new System.Drawing.Size(118, 26);
-            this.numNumbers.TabIndex = 17;
+            this.numNumbers.Size = new System.Drawing.Size(85, 26);
+            this.numNumbers.TabIndex = 14;
             // 
             // btnCloseButton
             // 
             this.btnCloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCloseButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCloseButton.ImageOptions.SvgImage = global::ShopManager.Properties.Resources.close1;
-            this.btnCloseButton.Location = new System.Drawing.Point(573, 281);
+            this.btnCloseButton.Location = new System.Drawing.Point(567, 281);
             this.btnCloseButton.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseButton.Name = "btnCloseButton";
             this.btnCloseButton.Size = new System.Drawing.Size(85, 40);
-            this.btnCloseButton.TabIndex = 15;
+            this.btnCloseButton.TabIndex = 22;
             this.btnCloseButton.Text = "بستن";
+            this.btnCloseButton.Click += new System.EventHandler(this.btnCloseButton_Click);
             // 
             // btnAddToList
             // 
             this.btnAddToList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddToList.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddToList.ImageOptions.SvgImage")));
-            this.btnAddToList.Location = new System.Drawing.Point(662, 281);
+            this.btnAddToList.Location = new System.Drawing.Point(656, 281);
             this.btnAddToList.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddToList.Name = "btnAddToList";
             this.btnAddToList.Size = new System.Drawing.Size(85, 40);
-            this.btnAddToList.TabIndex = 13;
+            this.btnAddToList.TabIndex = 21;
             this.btnAddToList.Text = "افزودن ";
+            this.btnAddToList.Click += new System.EventHandler(this.btnAddToList_Click);
             // 
             // btnSaveButton
             // 
             this.btnSaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveButton.ImageOptions.SvgImage = global::ShopManager.Properties.Resources.save;
-            this.btnSaveButton.Location = new System.Drawing.Point(751, 281);
+            this.btnSaveButton.Location = new System.Drawing.Point(745, 281);
             this.btnSaveButton.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveButton.Name = "btnSaveButton";
             this.btnSaveButton.Size = new System.Drawing.Size(85, 40);
-            this.btnSaveButton.TabIndex = 14;
+            this.btnSaveButton.TabIndex = 20;
             this.btnSaveButton.Text = "ثبت";
             // 
             // btnCustomerAdd
@@ -414,17 +423,17 @@ namespace ShopManager.AppForms
             this.btnCustomerAdd.Appearance.Options.UseTextOptions = true;
             this.btnCustomerAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomerAdd.ImageOptions.Image")));
             this.btnCustomerAdd.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnCustomerAdd.Location = new System.Drawing.Point(573, 122);
+            this.btnCustomerAdd.Location = new System.Drawing.Point(567, 122);
             this.btnCustomerAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnCustomerAdd.Name = "btnCustomerAdd";
             this.btnCustomerAdd.Size = new System.Drawing.Size(26, 26);
-            this.btnCustomerAdd.TabIndex = 12;
+            this.btnCustomerAdd.TabIndex = 6;
             this.btnCustomerAdd.Click += new System.EventHandler(this.btnCustomerAdd_Click);
             // 
             // cbxStoreProduct
             // 
             this.cbxStoreProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxStoreProduct.Location = new System.Drawing.Point(573, 154);
+            this.cbxStoreProduct.Location = new System.Drawing.Point(567, 154);
             this.cbxStoreProduct.Name = "cbxStoreProduct";
             this.cbxStoreProduct.Parmida_ActivePlusMultiKeys = false;
             this.cbxStoreProduct.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -432,7 +441,7 @@ namespace ShopManager.AppForms
             this.cbxStoreProduct.Properties.PopupFormSize = new System.Drawing.Size(450, 0);
             this.cbxStoreProduct.Properties.PopupView = this.gridView1;
             this.cbxStoreProduct.Size = new System.Drawing.Size(263, 26);
-            this.cbxStoreProduct.TabIndex = 2;
+            this.cbxStoreProduct.TabIndex = 9;
             this.cbxStoreProduct.EditValueChanged += new System.EventHandler(this.cbxStoreProduct_EditValueChanged);
             // 
             // gridView1
@@ -563,14 +572,14 @@ namespace ShopManager.AppForms
             // cbxCustomers
             // 
             this.cbxCustomers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxCustomers.Location = new System.Drawing.Point(604, 122);
+            this.cbxCustomers.Location = new System.Drawing.Point(598, 122);
             this.cbxCustomers.Name = "cbxCustomers";
             this.cbxCustomers.Parmida_ActivePlusMultiKeys = false;
             this.cbxCustomers.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxCustomers.Properties.PopupView = this.searchLookUpEdit1View;
             this.cbxCustomers.Size = new System.Drawing.Size(232, 26);
-            this.cbxCustomers.TabIndex = 2;
+            this.cbxCustomers.TabIndex = 5;
             // 
             // searchLookUpEdit1View
             // 
@@ -668,74 +677,104 @@ namespace ShopManager.AppForms
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(842, 253);
+            this.label4.Location = new System.Drawing.Point(836, 253);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "قیمت";
+            this.label4.Size = new System.Drawing.Size(29, 20);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "جمع";
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(842, 189);
+            this.label3.Location = new System.Drawing.Point(836, 189);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 20);
-            this.label3.TabIndex = 0;
+            this.label3.TabIndex = 10;
             this.label3.Text = "موجودی";
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(842, 157);
+            this.label2.Location = new System.Drawing.Point(836, 157);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(24, 20);
-            this.label2.TabIndex = 0;
+            this.label2.TabIndex = 7;
             this.label2.Text = "کالا";
             // 
             // txtCurrency
             // 
             this.txtCurrency.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCurrency.Location = new System.Drawing.Point(573, 250);
+            this.txtCurrency.Location = new System.Drawing.Point(600, 218);
             this.txtCurrency.Name = "txtCurrency";
             this.txtCurrency.Parmida_ActivePlusMultiKeys = false;
-            this.txtCurrency.Size = new System.Drawing.Size(263, 26);
-            this.txtCurrency.TabIndex = 1;
+            this.txtCurrency.Properties.ReadOnly = true;
+            this.txtCurrency.Size = new System.Drawing.Size(139, 26);
+            this.txtCurrency.TabIndex = 15;
             // 
             // txtUnits
             // 
             this.txtUnits.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUnits.Location = new System.Drawing.Point(573, 186);
+            this.txtUnits.Location = new System.Drawing.Point(600, 186);
             this.txtUnits.Name = "txtUnits";
             this.txtUnits.Parmida_ActivePlusMultiKeys = false;
+            this.txtUnits.Properties.ReadOnly = true;
             this.txtUnits.Size = new System.Drawing.Size(139, 26);
-            this.txtUnits.TabIndex = 1;
+            this.txtUnits.TabIndex = 12;
             // 
             // txtNumbers
             // 
             this.txtNumbers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNumbers.Location = new System.Drawing.Point(718, 186);
+            this.txtNumbers.Location = new System.Drawing.Point(745, 186);
             this.txtNumbers.Name = "txtNumbers";
             this.txtNumbers.Parmida_ActivePlusMultiKeys = false;
-            this.txtNumbers.Size = new System.Drawing.Size(118, 26);
-            this.txtNumbers.TabIndex = 1;
+            this.txtNumbers.Properties.ReadOnly = true;
+            this.txtNumbers.Size = new System.Drawing.Size(85, 26);
+            this.txtNumbers.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(842, 125);
+            this.label1.Location = new System.Drawing.Point(836, 125);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 20);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 4;
             this.label1.Text = "مشتری";
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textEdit1.Location = new System.Drawing.Point(600, 250);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Parmida_ActivePlusMultiKeys = false;
+            this.textEdit1.Size = new System.Drawing.Size(230, 26);
+            this.textEdit1.TabIndex = 18;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl2.Location = new System.Drawing.Point(568, 221);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(22, 20);
+            this.labelControl2.TabIndex = 16;
+            this.labelControl2.Text = "ریال";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl3.Location = new System.Drawing.Point(567, 253);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(22, 20);
+            this.labelControl3.TabIndex = 19;
+            this.labelControl3.Text = "ریال";
             // 
             // SalesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 455);
+            this.ClientSize = new System.Drawing.Size(909, 449);
             this.Controls.Add(this.groupControl1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SalesForm";
@@ -760,6 +799,7 @@ namespace ShopManager.AppForms
             ((System.ComponentModel.ISupportInitialize)(this.txtCurrency.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUnits.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumbers.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -809,5 +849,8 @@ namespace ShopManager.AppForms
         private DevExpress.XtraGrid.Columns.GridColumn colOrderDetails;
         private DevExpress.XtraGrid.Columns.GridColumn colProductList;
         private DevExpress.XtraGrid.Columns.GridColumn colPurchaseInvoicy;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
     }
 }

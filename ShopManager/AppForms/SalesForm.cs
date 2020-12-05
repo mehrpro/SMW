@@ -11,6 +11,7 @@ using ShopManager.Repositories;
 using ShopManager.StructureMapping;
 using System.Data.Entity;
 using ShopManager.Models;
+using ShopManager.ViewModels.Goods;
 
 namespace ShopManager.AppForms
 {
@@ -73,6 +74,37 @@ namespace ShopManager.AppForms
             numNumbers.Properties.MaxValue = (decimal) selectedData.Numbers;
             txtUnits.EditValue = selectedData.ProductList.Unit.UnitName;
             txtCurrency.EditValue = selectedData.Price;
+        }
+
+        private StoreProductViewModel GetViewModel()
+        {
+            var newModel = new StoreProductViewModel
+            {
+                Customers_FK = Convert.ToInt32(cbxCustomers.EditValue),
+                OrderDate = dateInvoice.DateTime,
+                InvoiceType_FK = 2,
+                SumPrice = Convert.ToDouble(numNumbers.EditValue)* Convert.ToDouble(txtCurrency.EditValue),
+                StoreId = 0,
+                ProductName = cbxStoreProduct.Text,
+                ProductList_FK = Convert.ToInt32(cbxStoreProduct.EditValue),
+                PurchaseInvoice_FK = 0,
+                Orders_FK = 0,
+                StoreId_FK = 0,
+                Numbers = Convert.ToDouble(numNumbers.EditValue),
+                Price = Convert.ToDouble(txtCurrency.EditValue)
+            };
+            return newModel;
+        }
+
+
+        private void btnCloseButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnAddToList_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

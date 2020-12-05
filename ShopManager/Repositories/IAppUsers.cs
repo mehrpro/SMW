@@ -133,7 +133,7 @@ namespace ShopManager.Repositories
                 await _context.SaveChangesAsync();
                 return true;
             }
-            catch (Exception e)
+            catch 
             {
                 return false;
             }

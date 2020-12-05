@@ -37,6 +37,7 @@ namespace ShopManager
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.formAssistant1 = new DevExpress.XtraBars.FormAssistant();
             this.UserName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cbxUsers.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
@@ -48,7 +49,7 @@ namespace ShopManager
             // 
             this.cbxUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxUsers.EditValue = "";
-            this.cbxUsers.Location = new System.Drawing.Point(158, 21);
+            this.cbxUsers.Location = new System.Drawing.Point(152, 13);
             this.cbxUsers.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbxUsers.Name = "cbxUsers";
             this.cbxUsers.Parmida_ActivePlusMultiKeys = false;
@@ -132,7 +133,7 @@ namespace ShopManager
             // PasswordTextBox
             // 
             this.PasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.PasswordTextBox.Location = new System.Drawing.Point(158, 52);
+            this.PasswordTextBox.Location = new System.Drawing.Point(152, 44);
             this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Parmida_ActivePlusMultiKeys = false;
@@ -146,7 +147,7 @@ namespace ShopManager
             // 
             this.LoginButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.LoginButton.ImageOptions.SvgImage = global::ShopManager.Properties.Resources.actions_refresh;
-            this.LoginButton.Location = new System.Drawing.Point(266, 84);
+            this.LoginButton.Location = new System.Drawing.Point(260, 76);
             this.LoginButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(100, 40);
@@ -159,7 +160,7 @@ namespace ShopManager
             this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CloseButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CloseButton.ImageOptions.SvgImage = global::ShopManager.Properties.Resources.close;
-            this.CloseButton.Location = new System.Drawing.Point(158, 84);
+            this.CloseButton.Location = new System.Drawing.Point(152, 76);
             this.CloseButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(100, 40);
@@ -170,7 +171,7 @@ namespace ShopManager
             // labelControl1
             // 
             this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl1.Location = new System.Drawing.Point(374, 24);
+            this.labelControl1.Location = new System.Drawing.Point(368, 16);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(24, 20);
@@ -180,7 +181,7 @@ namespace ShopManager
             // labelControl2
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(374, 55);
+            this.labelControl2.Location = new System.Drawing.Point(368, 47);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(42, 20);
@@ -215,7 +216,7 @@ namespace ShopManager
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseButton;
-            this.ClientSize = new System.Drawing.Size(428, 147);
+            this.ClientSize = new System.Drawing.Size(422, 139);
             this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
@@ -223,6 +224,7 @@ namespace ShopManager
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.cbxUsers);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LoginForm";
@@ -249,5 +251,6 @@ namespace ShopManager
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraGrid.Columns.GridColumn UserName;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private DevExpress.XtraBars.FormAssistant formAssistant1;
     }
 }
