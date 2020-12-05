@@ -129,6 +129,7 @@ namespace ShopManager.AppForms
                 SumCurrency = Convert.ToDouble(txtCurrency.EditValue) * Convert.ToDouble(numNumbers.EditValue),
                 InvoiceNumber = txtInvoiceNumber.Text.Trim(),
                 Frosh = Convert.ToDouble(txtFroshe.EditValue),
+                Percent = Convert.ToByte(numPerc.EditValue),
 
             };
             return newInvoiceItem;
@@ -143,7 +144,7 @@ namespace ShopManager.AppForms
         private void ClearItem()
         {
             cbxProductList.EditValue = cbxUnites.EditValue = 
-                txtCurrency.EditValue =txtInvoiceNumber.EditValue = null;
+                txtCurrency.EditValue = null;
             numNumbers.EditValue = 0;
 
         }
@@ -188,6 +189,7 @@ namespace ShopManager.AppForms
         private void ClearForm()
         {
             ClearItem();
+            txtInvoiceNumber.EditValue =
             cbxSallerList.EditValue = null;
             _invoicies = new List<InvoiceTempList>();
             UpdateInvoiceGridControl();

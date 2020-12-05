@@ -141,6 +141,14 @@
     <Compile Include="Migrations\202012050715315_dbcreaeAndUpdateSeed.designer.cs">
       <DependentUpon>202012050715315_dbcreaeAndUpdateSeed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012051923400_updateStoreProduct.cs" />
+    <Compile Include="Migrations\202012051923400_updateStoreProduct.designer.cs">
+      <DependentUpon>202012051923400_updateStoreProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012052006093_UpdateOrderDetails.cs" />
+    <Compile Include="Migrations\202012052006093_UpdateOrderDetails.designer.cs">
+      <DependentUpon>202012052006093_UpdateOrderDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppUser.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -199,6 +207,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012050715315_dbcreaeAndUpdateSeed.resx">
       <DependentUpon>202012050715315_dbcreaeAndUpdateSeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012051923400_updateStoreProduct.resx">
+      <DependentUpon>202012051923400_updateStoreProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012052006093_UpdateOrderDetails.resx">
+      <DependentUpon>202012052006093_UpdateOrderDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

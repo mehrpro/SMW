@@ -1,10 +1,6 @@
 namespace ShopManager.Models
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     public partial class OrderDetail
     {
@@ -18,6 +14,12 @@ namespace ShopManager.Models
         public double Numbers { get; set; }
 
         public double Price { get; set; }
+
+        public byte Percent { get; set; }
+
+        public double PercentPrice { get; set; }
+        public double SumPrice { get; set; }
+        public double SumAfterPercent { get; set; }
 
         public byte InvoiceType_FK { get; set; }
 

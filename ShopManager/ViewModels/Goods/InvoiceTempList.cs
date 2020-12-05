@@ -20,6 +20,9 @@ namespace ShopManager.ViewModels.Goods
 
         public double Numbers { get; set; }
 
+        public byte Percent { get; set; }
+
+
         public string InvoiceNumber { get; set; }
         public double  Frosh { get; set; }
         public int AppUser_FK { get; set; }

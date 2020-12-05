@@ -9,20 +9,22 @@ namespace ShopManager.Models
     [Table("StoreProductList")]
     public partial class StoreProductList
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage",
+            "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public StoreProductList()
         {
             OrderDetails = new HashSet<OrderDetail>();
         }
 
-        [Key]
-        public int StoreId { get; set; }
+        [Key] public int StoreId { get; set; }
 
         public int ProductList_FK { get; set; }
 
         public int PurchaseInvoice_FK { get; set; }
 
         public double Price { get; set; }
+
+        public byte Percent { get; set; }
 
         public double Numbers { get; set; }
 

@@ -163,6 +163,7 @@ namespace ShopManager.Repositories
                                 ProductList_FK = item.ProductList_FK,
                                 PurchaseInvoice_FK = newItem.PurchaseInvoiceId,
                                 Price = item.Frosh,
+                                Percent = item.Percent,
                                 Numbers = item.Numbers,
                             };
                             _context.StoreProductLists.Add(newStore);

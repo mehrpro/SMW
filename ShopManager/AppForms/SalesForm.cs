@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ShopManager.Repositories;
 using ShopManager.StructureMapping;
 using System.Data.Entity;
+using System.Globalization;
 using ShopManager.Models;
 using ShopManager.ViewModels.Goods;
 
@@ -103,11 +104,14 @@ namespace ShopManager.AppForms
                 numNumbers.EditValue = 0;
                 txtUnits.EditValue = null;
                 txtCurrency.EditValue = 0;
+                numPercent.Properties.MaxValue = 100;
+                
                 return;
             }
             txtNumbers.EditValue = selectedData.Numbers;
             numNumbers.Properties.MaxValue = (decimal) selectedData.Numbers;
             txtUnits.EditValue = selectedData.ProductList.Unit.UnitName;
+            numPercent.Properties.MaxValue = selectedData.Percent;
             txtCurrency.EditValue = selectedData.Price;
         }
 
@@ -118,7 +122,7 @@ namespace ShopManager.AppForms
                 Customers_FK = Convert.ToInt32(cbxCustomers.EditValue),
                 OrderDate = dateInvoice.DateTime,
                 InvoiceType_FK = 2,
-                SumPrice = Convert.ToDouble(numNumbers.EditValue)* Convert.ToDouble(txtCurrency.EditValue),
+                SumPrice = Convert.ToDouble(txtSum.EditValue),
                 StoreId = 0,
                 ProductName = cbxStoreProduct.Text,
                 ProductList_FK = Convert.ToInt32(cbxStoreProduct.EditValue),
@@ -128,7 +132,9 @@ namespace ShopManager.AppForms
                 Numbers = Convert.ToDouble(numNumbers.EditValue),
                 Price = Convert.ToDouble(txtCurrency.EditValue),
                 UnitNam = txtUnits.Text,
-                
+                Percent = Convert.ToByte(numPercent.EditValue),
+                PercentPrice = Convert.ToDouble(txtPercentPrice.EditValue),
+                SumAfterPercent = Convert.ToDouble(txtSumAfterPercent.EditValue),
             };
             return newModel;
         }
@@ -166,6 +172,25 @@ namespace ShopManager.AppForms
                 _storeProduct.Remove(select);
                 await UpdateGridControl();
             }
+        }
+
+
+        private void Sumer()
+        {
+            var a1 = Convert.ToDouble(numNumbers.EditValue) * Convert.ToDouble(txtCurrency.EditValue);
+            var a2 = a1 * Convert.ToByte(numPercent.EditValue) / 100;
+            txtPercentPrice.Text = a2.ToString(CultureInfo.InvariantCulture);
+            txtSum.EditValue = a1;
+            txtSumAfterPercent.EditValue = a1 - a2;
+        }
+        private void numNumbers_EditValueChanged(object sender, EventArgs e)
+        {
+            Sumer();
+        }
+
+        private void numTakfif_EditValueChanged(object sender, EventArgs e)
+        {
+            Sumer();
         }
     }
 }

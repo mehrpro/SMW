@@ -101,7 +101,7 @@ namespace ShopManager.AppForms
             this.repositoryItemMemoExEdit1,
             this.SelectButton});
             this.CustomersGridControl.Size = new System.Drawing.Size(740, 337);
-            this.CustomersGridControl.TabIndex = 15;
+            this.CustomersGridControl.TabIndex = 8;
             this.CustomersGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewInvoiceList});
             // 
@@ -237,7 +237,7 @@ namespace ShopManager.AppForms
             this.btnCloseButton.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseButton.Name = "btnCloseButton";
             this.btnCloseButton.Size = new System.Drawing.Size(85, 40);
-            this.btnCloseButton.TabIndex = 14;
+            this.btnCloseButton.TabIndex = 7;
             this.btnCloseButton.Text = "بستن";
             this.btnCloseButton.Click += new System.EventHandler(this.btnCloseButton_Click);
             // 
@@ -248,7 +248,7 @@ namespace ShopManager.AppForms
             this.btnSaveButton.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveButton.Name = "btnSaveButton";
             this.btnSaveButton.Size = new System.Drawing.Size(85, 40);
-            this.btnSaveButton.TabIndex = 13;
+            this.btnSaveButton.TabIndex = 6;
             this.btnSaveButton.Text = "ثبت";
             this.btnSaveButton.Click += new System.EventHandler(this.btnSaveButton_Click);
             // 
@@ -258,7 +258,7 @@ namespace ShopManager.AppForms
             this.labelControl3.Location = new System.Drawing.Point(701, 93);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(45, 20);
-            this.labelControl3.TabIndex = 0;
+            this.labelControl3.TabIndex = 4;
             this.labelControl3.Text = "توضیحات";
             // 
             // txtCustromerMobile
@@ -268,7 +268,7 @@ namespace ShopManager.AppForms
             this.txtCustromerMobile.Parmida_ActivePlusMultiKeys = false;
             this.txtCustromerMobile.Properties.MaxLength = 10;
             this.txtCustromerMobile.Size = new System.Drawing.Size(171, 26);
-            this.txtCustromerMobile.TabIndex = 1;
+            this.txtCustromerMobile.TabIndex = 3;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "This value is not valid";
             this.dxValidationProvider1.SetValidationRule(this.txtCustromerMobile, conditionValidationRule1);
@@ -278,7 +278,7 @@ namespace ShopManager.AppForms
             this.labelControl2.Location = new System.Drawing.Point(368, 61);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(22, 20);
-            this.labelControl2.TabIndex = 0;
+            this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "تلفن";
             // 
             // txtCustomerName
@@ -317,7 +317,7 @@ namespace ShopManager.AppForms
             this.txtDescription.Properties.AppearanceReadOnly.TextOptions.RightToLeftFixed = System.Windows.Forms.RightToLeft.No;
             this.txtDescription.Properties.MaxLength = 250;
             this.txtDescription.Size = new System.Drawing.Size(504, 50);
-            this.txtDescription.TabIndex = 1;
+            this.txtDescription.TabIndex = 5;
             // 
             // CustomersForm
             // 

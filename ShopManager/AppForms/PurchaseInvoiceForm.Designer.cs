@@ -169,7 +169,7 @@ namespace ShopManager.AppForms
             this.dateInvoice.Properties.Parmida_CheckDateOnLeave = false;
             this.dateInvoice.Properties.Parmida_CheckEmptyFillDateOnEnter = false;
             this.dateInvoice.Size = new System.Drawing.Size(264, 26);
-            this.dateInvoice.TabIndex = 14;
+            this.dateInvoice.TabIndex = 3;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "This value is not valid";
             this.dxValidationProvider1.SetValidationRule(this.dateInvoice, conditionValidationRule1);
@@ -186,7 +186,7 @@ namespace ShopManager.AppForms
             this.repositoryItemMemoExEdit1,
             this.RemoveButton});
             this.InvoiceGridControl.Size = new System.Drawing.Size(608, 495);
-            this.InvoiceGridControl.TabIndex = 13;
+            this.InvoiceGridControl.TabIndex = 26;
             this.InvoiceGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewInvoiceList});
             // 
@@ -348,12 +348,13 @@ namespace ShopManager.AppForms
             // 
             this.btnNewInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNewInvoice.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnNewInvoice.Enabled = false;
             this.btnNewInvoice.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnNewInvoice.ImageOptions.SvgImage")));
             this.btnNewInvoice.Location = new System.Drawing.Point(774, 480);
             this.btnNewInvoice.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewInvoice.Name = "btnNewInvoice";
             this.btnNewInvoice.Size = new System.Drawing.Size(100, 40);
-            this.btnNewInvoice.TabIndex = 12;
+            this.btnNewInvoice.TabIndex = 0;
             this.btnNewInvoice.Text = "جدید";
             this.btnNewInvoice.Visible = false;
             this.btnNewInvoice.Click += new System.EventHandler(this.btnNewInvoice_Click);
@@ -367,7 +368,7 @@ namespace ShopManager.AppForms
             this.btnCloseButton.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseButton.Name = "btnCloseButton";
             this.btnCloseButton.Size = new System.Drawing.Size(85, 40);
-            this.btnCloseButton.TabIndex = 12;
+            this.btnCloseButton.TabIndex = 25;
             this.btnCloseButton.Text = "بستن";
             this.btnCloseButton.Click += new System.EventHandler(this.btnCloseButton_Click);
             // 
@@ -375,13 +376,14 @@ namespace ShopManager.AppForms
             // 
             this.btnUnitAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUnitAdd.Appearance.Options.UseTextOptions = true;
+            this.btnUnitAdd.Enabled = false;
             this.btnUnitAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUnitAdd.ImageOptions.Image")));
             this.btnUnitAdd.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnUnitAdd.Location = new System.Drawing.Point(944, 516);
+            this.btnUnitAdd.Location = new System.Drawing.Point(878, 480);
             this.btnUnitAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnUnitAdd.Name = "btnUnitAdd";
             this.btnUnitAdd.Size = new System.Drawing.Size(26, 26);
-            this.btnUnitAdd.TabIndex = 11;
+            this.btnUnitAdd.TabIndex = 27;
             this.btnUnitAdd.Visible = false;
             this.btnUnitAdd.Click += new System.EventHandler(this.btnUnitAdd_Click);
             // 
@@ -395,7 +397,7 @@ namespace ShopManager.AppForms
             this.btnSallerAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnSallerAdd.Name = "btnSallerAdd";
             this.btnSallerAdd.Size = new System.Drawing.Size(26, 26);
-            this.btnSallerAdd.TabIndex = 11;
+            this.btnSallerAdd.TabIndex = 8;
             this.btnSallerAdd.Click += new System.EventHandler(this.btnSallerAdd_Click);
             // 
             // btnProductAdd
@@ -419,7 +421,7 @@ namespace ShopManager.AppForms
             this.btnAddToList.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddToList.Name = "btnAddToList";
             this.btnAddToList.Size = new System.Drawing.Size(85, 40);
-            this.btnAddToList.TabIndex = 11;
+            this.btnAddToList.TabIndex = 24;
             this.btnAddToList.Text = "افزودن ";
             this.btnAddToList.Click += new System.EventHandler(this.btnAddToList_Click);
             // 
@@ -431,7 +433,7 @@ namespace ShopManager.AppForms
             this.btnSaveButton.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveButton.Name = "btnSaveButton";
             this.btnSaveButton.Size = new System.Drawing.Size(85, 40);
-            this.btnSaveButton.TabIndex = 11;
+            this.btnSaveButton.TabIndex = 23;
             this.btnSaveButton.Text = "ثبت";
             this.btnSaveButton.Click += new System.EventHandler(this.btnSaveButton_Click);
             // 
@@ -441,7 +443,7 @@ namespace ShopManager.AppForms
             this.labelControl6.Location = new System.Drawing.Point(905, 321);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(26, 20);
-            this.labelControl6.TabIndex = 0;
+            this.labelControl6.TabIndex = 21;
             this.labelControl6.Text = "تعداد";
             // 
             // txtFroshe
@@ -454,7 +456,7 @@ namespace ShopManager.AppForms
             this.txtFroshe.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtFroshe.Properties.ReadOnly = true;
             this.txtFroshe.Size = new System.Drawing.Size(174, 26);
-            this.txtFroshe.TabIndex = 1;
+            this.txtFroshe.TabIndex = 19;
             // 
             // labelControl11
             // 
@@ -462,7 +464,7 @@ namespace ShopManager.AppForms
             this.labelControl11.Location = new System.Drawing.Point(636, 289);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(22, 20);
-            this.labelControl11.TabIndex = 0;
+            this.labelControl11.TabIndex = 20;
             this.labelControl11.Text = "ریال";
             // 
             // txtCurrency
@@ -474,7 +476,7 @@ namespace ShopManager.AppForms
             this.txtCurrency.Properties.Mask.EditMask = "n0";
             this.txtCurrency.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtCurrency.Size = new System.Drawing.Size(233, 26);
-            this.txtCurrency.TabIndex = 1;
+            this.txtCurrency.TabIndex = 15;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
             conditionValidationRule2.ErrorText = "This value is not valid";
             conditionValidationRule2.Value1 = "0.0";
@@ -487,7 +489,7 @@ namespace ShopManager.AppForms
             this.labelControl10.Location = new System.Drawing.Point(905, 289);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(32, 20);
-            this.labelControl10.TabIndex = 0;
+            this.labelControl10.TabIndex = 17;
             this.labelControl10.Text = "فروش";
             // 
             // labelControl8
@@ -496,7 +498,7 @@ namespace ShopManager.AppForms
             this.labelControl8.Location = new System.Drawing.Point(637, 257);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(22, 20);
-            this.labelControl8.TabIndex = 0;
+            this.labelControl8.TabIndex = 16;
             this.labelControl8.Text = "ریال";
             // 
             // labelControl5
@@ -505,7 +507,7 @@ namespace ShopManager.AppForms
             this.labelControl5.Location = new System.Drawing.Point(906, 257);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(14, 20);
-            this.labelControl5.TabIndex = 0;
+            this.labelControl5.TabIndex = 14;
             this.labelControl5.Text = "فی";
             // 
             // labelControl4
@@ -514,7 +516,7 @@ namespace ShopManager.AppForms
             this.labelControl4.Location = new System.Drawing.Point(906, 225);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(24, 20);
-            this.labelControl4.TabIndex = 0;
+            this.labelControl4.TabIndex = 12;
             this.labelControl4.Text = "واحد";
             // 
             // labelControl3
@@ -523,7 +525,7 @@ namespace ShopManager.AppForms
             this.labelControl3.Location = new System.Drawing.Point(906, 193);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(15, 20);
-            this.labelControl3.TabIndex = 0;
+            this.labelControl3.TabIndex = 9;
             this.labelControl3.Text = "کالا";
             // 
             // labelControl2
@@ -532,7 +534,7 @@ namespace ShopManager.AppForms
             this.labelControl2.Location = new System.Drawing.Point(906, 161);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(43, 20);
-            this.labelControl2.TabIndex = 0;
+            this.labelControl2.TabIndex = 6;
             this.labelControl2.Text = "فروشنده";
             // 
             // txtInvoiceNumber
@@ -544,7 +546,7 @@ namespace ShopManager.AppForms
             this.txtInvoiceNumber.Parmida_ActivePlusMultiKeys = false;
             this.txtInvoiceNumber.Properties.MaxLength = 100;
             this.txtInvoiceNumber.Size = new System.Drawing.Size(264, 26);
-            this.txtInvoiceNumber.TabIndex = 1;
+            this.txtInvoiceNumber.TabIndex = 5;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "This value is not valid";
             this.dxValidationProvider1.SetValidationRule(this.txtInvoiceNumber, conditionValidationRule3);
@@ -555,7 +557,7 @@ namespace ShopManager.AppForms
             this.labelControl9.Location = new System.Drawing.Point(906, 129);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(66, 20);
-            this.labelControl9.TabIndex = 0;
+            this.labelControl9.TabIndex = 4;
             this.labelControl9.Text = "شماره فاکتور ";
             // 
             // txtTypeInvoice
@@ -584,7 +586,7 @@ namespace ShopManager.AppForms
             this.labelControl1.Location = new System.Drawing.Point(906, 97);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(58, 20);
-            this.labelControl1.TabIndex = 0;
+            this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "تاریخ فاکتور";
             // 
             // numPerc
@@ -613,7 +615,7 @@ namespace ShopManager.AppForms
             0,
             0});
             this.numPerc.Size = new System.Drawing.Size(52, 26);
-            this.numPerc.TabIndex = 1;
+            this.numPerc.TabIndex = 18;
             this.numPerc.EditValueChanged += new System.EventHandler(this.numPerc_EditValueChanged);
             // 
             // numNumbers
@@ -636,7 +638,7 @@ namespace ShopManager.AppForms
             this.numNumbers.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.numNumbers.Properties.Mask.EditMask = "d";
             this.numNumbers.Size = new System.Drawing.Size(263, 26);
-            this.numNumbers.TabIndex = 1;
+            this.numNumbers.TabIndex = 22;
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
             conditionValidationRule4.ErrorText = "تعداد خریداری شده را وارد کنید";
             conditionValidationRule4.Value1 = "0";
@@ -658,7 +660,7 @@ namespace ShopManager.AppForms
             this.cbxSallerList.Properties.NullText = "";
             this.cbxSallerList.Properties.PopupView = this.searchLookUpEdit1View;
             this.cbxSallerList.Size = new System.Drawing.Size(233, 26);
-            this.cbxSallerList.TabIndex = 1;
+            this.cbxSallerList.TabIndex = 7;
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
             conditionValidationRule5.ErrorText = "This value is not valid";
             conditionValidationRule5.Value1 = "0";
@@ -797,7 +799,7 @@ namespace ShopManager.AppForms
             this.cbxProductList.Properties.NullText = "";
             this.cbxProductList.Properties.PopupView = this.gridView3;
             this.cbxProductList.Size = new System.Drawing.Size(233, 26);
-            this.cbxProductList.TabIndex = 1;
+            this.cbxProductList.TabIndex = 10;
             conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
             conditionValidationRule6.ErrorText = "This value is not valid";
             conditionValidationRule6.Value1 = "0";
@@ -911,7 +913,7 @@ namespace ShopManager.AppForms
             this.cbxUnites.Properties.PopupView = this.gridView4;
             this.cbxUnites.Properties.ReadOnly = true;
             this.cbxUnites.Size = new System.Drawing.Size(264, 26);
-            this.cbxUnites.TabIndex = 1;
+            this.cbxUnites.TabIndex = 13;
             conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule7.ErrorText = "This value is not valid";
             this.dxValidationProvider1.SetValidationRule(this.cbxUnites, conditionValidationRule7);
