@@ -46,7 +46,6 @@ namespace ShopManager.AppForms
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.dateInvoice = new DevExpress.XtraEditors.DateEdit();
             this.txtTypeInvoice = new DevExpress.XtraEditors.TextEdit();
@@ -216,8 +215,7 @@ namespace ShopManager.AppForms
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn1,
-            this.gridColumn3,
-            this.gridColumn7});
+            this.gridColumn3});
             this.gridViewInvoiceList.GridControl = this.SalerGridControl;
             this.gridViewInvoiceList.Name = "gridViewInvoiceList";
             this.gridViewInvoiceList.OptionsBehavior.ReadOnly = true;
@@ -245,11 +243,12 @@ namespace ShopManager.AppForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "کالا";
-            this.gridColumn2.FieldName = "Goods";
+            this.gridColumn2.FieldName = "ProductName";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
@@ -257,8 +256,8 @@ namespace ShopManager.AppForms
             // 
             // gridColumn4
             // 
-            this.gridColumn4.Caption = "فی";
-            this.gridColumn4.FieldName = "Currency";
+            this.gridColumn4.Caption = "قیمت";
+            this.gridColumn4.FieldName = "Price";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 4;
@@ -267,7 +266,7 @@ namespace ShopManager.AppForms
             // gridColumn5
             // 
             this.gridColumn5.Caption = "واحد";
-            this.gridColumn5.FieldName = "UnitName";
+            this.gridColumn5.FieldName = "UnitNam";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 3;
@@ -275,13 +274,13 @@ namespace ShopManager.AppForms
             // 
             // gridColumn1
             // 
-            this.gridColumn1.Caption = "جمع خرید";
-            this.gridColumn1.FieldName = "SumCurrency";
+            this.gridColumn1.Caption = "جمع ";
+            this.gridColumn1.FieldName = "SumPrice";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SumCurrency", "جمع کل={0:0.##}")});
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 6;
+            this.gridColumn1.VisibleIndex = 5;
             this.gridColumn1.Width = 101;
             // 
             // gridColumn3
@@ -291,14 +290,6 @@ namespace ShopManager.AppForms
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "فروش";
-            this.gridColumn7.FieldName = "Frosh";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
             // 
             // repositoryItemMemoExEdit1
             // 
@@ -841,7 +832,6 @@ namespace ShopManager.AppForms
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn CustomerName;
         private DevExpress.XtraGrid.Columns.GridColumn CustomerId;

@@ -42,15 +42,17 @@ namespace ShopManager.AppForms
             if (_storeProduct.Count > 0)
             {
                 cbxCustomers.Enabled = false;
-
-
             }
             else
             {
                 cbxCustomers.Enabled = true;
             }
         }
-
+        /// <summary>
+        /// دکمه افزودن مشتری جدید
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void btnCustomerAdd_Click(object sender, EventArgs e)
         {
             using (var tempContainer = new StructureMap.Container(new TypeRegistery()))
@@ -60,18 +62,29 @@ namespace ShopManager.AppForms
                 await CustomersList();
             }
         }
+        /// <summary>
+        /// لیست مشتریان
+        /// </summary>
+        /// <returns></returns>
         private async Task CustomersList()
         {
             cbxCustomers.Properties.DataSource = await _appUsers.GetAllCustomer();
         }
-
+        /// <summary>
+        /// لیست کالا
+        /// </summary>
+        /// <returns></returns>
         private async Task UpdateStoreProduct()
         {
             cbxStoreProduct.Properties.DataSource = await _goodsClass.GetStoreProduct();
         }
-
+        /// <summary>
+        /// فاکتور فروش
+        /// </summary>
+        /// <returns></returns>
         private async Task UpdateGridControl()
         {
+            CheckSalerGridControl();
             SalerGridControl.DataSource = _storeProduct;
         }
 
@@ -113,7 +126,9 @@ namespace ShopManager.AppForms
                 Orders_FK = 0,
                 StoreId_FK = 0,
                 Numbers = Convert.ToDouble(numNumbers.EditValue),
-                Price = Convert.ToDouble(txtCurrency.EditValue)
+                Price = Convert.ToDouble(txtCurrency.EditValue),
+                UnitNam = txtUnits.Text,
+                
             };
             return newModel;
         }
@@ -127,7 +142,7 @@ namespace ShopManager.AppForms
             Close();
         }
 
-        private void btnAddToList_Click(object sender, EventArgs e)
+        private async void btnAddToList_Click(object sender, EventArgs e)
         {
             if (!dxValidationProvider1.Validate())
             {
@@ -137,9 +152,19 @@ namespace ShopManager.AppForms
             {
                 _storeProduct.Add(GetViewModel());
                 ClearItem();
-                UpdateGridControl();
+                await UpdateGridControl();
 
 
+            }
+        }
+
+        private async void RemoveButton_Click(object sender, EventArgs e)
+        {
+            if (gridViewInvoiceList.GetFocusedRowCellValue("ProductName") != null)
+            {
+                var select = (StoreProductViewModel) gridViewInvoiceList.GetFocusedRow();
+                _storeProduct.Remove(select);
+                await UpdateGridControl();
             }
         }
     }
