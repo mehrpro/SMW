@@ -36,6 +36,15 @@ namespace ShopManager.AppForms
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule9 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -50,6 +59,7 @@ namespace ShopManager.AppForms
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.dateInvoice = new DevExpress.XtraEditors.DateEdit();
             this.txtTypeInvoice = new DevExpress.XtraEditors.TextEdit();
@@ -59,6 +69,7 @@ namespace ShopManager.AppForms
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.numPercent = new DevExpress.XtraEditors.SpinEdit();
             this.numNumbers = new DevExpress.XtraEditors.SpinEdit();
+            this.btnPrinter = new DevExpress.XtraEditors.SimpleButton();
             this.btnCloseButton = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddToList = new DevExpress.XtraEditors.SimpleButton();
             this.btnSaveButton = new DevExpress.XtraEditors.SimpleButton();
@@ -129,6 +140,7 @@ namespace ShopManager.AppForms
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.numPercent);
             this.groupControl1.Controls.Add(this.numNumbers);
+            this.groupControl1.Controls.Add(this.btnPrinter);
             this.groupControl1.Controls.Add(this.btnCloseButton);
             this.groupControl1.Controls.Add(this.btnAddToList);
             this.groupControl1.Controls.Add(this.btnSaveButton);
@@ -195,13 +207,13 @@ namespace ShopManager.AppForms
             this.SalerGridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SalerGridControl.Location = new System.Drawing.Point(12, 42);
+            this.SalerGridControl.Location = new System.Drawing.Point(12, 61);
             this.SalerGridControl.MainView = this.gridViewInvoiceList;
             this.SalerGridControl.Name = "SalerGridControl";
             this.SalerGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoExEdit1,
             this.RemoveButton});
-            this.SalerGridControl.Size = new System.Drawing.Size(510, 395);
+            this.SalerGridControl.Size = new System.Drawing.Size(510, 376);
             this.SalerGridControl.TabIndex = 0;
             this.SalerGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewInvoiceList});
@@ -268,7 +280,8 @@ namespace ShopManager.AppForms
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn1,
-            this.gridColumn3});
+            this.gridColumn3,
+            this.gridColumn6});
             this.gridViewInvoiceList.GridControl = this.SalerGridControl;
             this.gridViewInvoiceList.Name = "gridViewInvoiceList";
             this.gridViewInvoiceList.OptionsBehavior.ReadOnly = true;
@@ -328,12 +341,12 @@ namespace ShopManager.AppForms
             // gridColumn1
             // 
             this.gridColumn1.Caption = "جمع ";
-            this.gridColumn1.FieldName = "SumPrice";
+            this.gridColumn1.FieldName = "SumAfterPercent";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SumCurrency", "جمع کل={0:0.##}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SumAfterPercent", "جمع کل={0:0.##}")});
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 5;
+            this.gridColumn1.VisibleIndex = 6;
             this.gridColumn1.Width = 101;
             // 
             // gridColumn3
@@ -343,6 +356,14 @@ namespace ShopManager.AppForms
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "تخفیف";
+            this.gridColumn6.FieldName = "PercentPrice";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
             // 
             // repositoryItemMemoExEdit1
             // 
@@ -378,6 +399,9 @@ namespace ShopManager.AppForms
             this.txtTypeInvoice.Properties.ReadOnly = true;
             this.txtTypeInvoice.Size = new System.Drawing.Size(230, 26);
             this.txtTypeInvoice.TabIndex = 1;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtTypeInvoice, conditionValidationRule1);
             // 
             // labelControl7
             // 
@@ -436,6 +460,10 @@ namespace ShopManager.AppForms
             this.numPercent.Properties.Mask.EditMask = "d";
             this.numPercent.Size = new System.Drawing.Size(85, 26);
             this.numPercent.TabIndex = 14;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.GreaterOrEqual;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            conditionValidationRule2.Value1 = "0";
+            this.dxValidationProvider1.SetValidationRule(this.numPercent, conditionValidationRule2);
             this.numPercent.EditValueChanged += new System.EventHandler(this.numTakfif_EditValueChanged);
             // 
             // numNumbers
@@ -459,7 +487,23 @@ namespace ShopManager.AppForms
             this.numNumbers.Properties.Mask.EditMask = "d";
             this.numNumbers.Size = new System.Drawing.Size(85, 26);
             this.numNumbers.TabIndex = 14;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            conditionValidationRule3.Value1 = "0";
+            this.dxValidationProvider1.SetValidationRule(this.numNumbers, conditionValidationRule3);
             this.numNumbers.EditValueChanged += new System.EventHandler(this.numNumbers_EditValueChanged);
+            // 
+            // btnPrinter
+            // 
+            this.btnPrinter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrinter.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnPrinter.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPrinter.ImageOptions.SvgImage")));
+            this.btnPrinter.Location = new System.Drawing.Point(629, 356);
+            this.btnPrinter.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPrinter.Name = "btnPrinter";
+            this.btnPrinter.Size = new System.Drawing.Size(85, 40);
+            this.btnPrinter.TabIndex = 22;
+            this.btnPrinter.Text = "چاپ";
             // 
             // btnCloseButton
             // 
@@ -478,7 +522,7 @@ namespace ShopManager.AppForms
             // 
             this.btnAddToList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddToList.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddToList.ImageOptions.SvgImage")));
-            this.btnAddToList.Location = new System.Drawing.Point(629, 356);
+            this.btnAddToList.Location = new System.Drawing.Point(718, 356);
             this.btnAddToList.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddToList.Name = "btnAddToList";
             this.btnAddToList.Size = new System.Drawing.Size(85, 40);
@@ -490,12 +534,13 @@ namespace ShopManager.AppForms
             // 
             this.btnSaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveButton.ImageOptions.SvgImage = global::ShopManager.Properties.Resources.save;
-            this.btnSaveButton.Location = new System.Drawing.Point(718, 356);
+            this.btnSaveButton.Location = new System.Drawing.Point(807, 356);
             this.btnSaveButton.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveButton.Name = "btnSaveButton";
             this.btnSaveButton.Size = new System.Drawing.Size(85, 40);
             this.btnSaveButton.TabIndex = 20;
             this.btnSaveButton.Text = "ثبت";
+            this.btnSaveButton.Click += new System.EventHandler(this.btnSaveButton_Click);
             // 
             // btnCustomerAdd
             // 
@@ -522,6 +567,9 @@ namespace ShopManager.AppForms
             this.cbxStoreProduct.Properties.PopupView = this.gridView1;
             this.cbxStoreProduct.Size = new System.Drawing.Size(230, 26);
             this.cbxStoreProduct.TabIndex = 9;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.cbxStoreProduct, conditionValidationRule4);
             this.cbxStoreProduct.EditValueChanged += new System.EventHandler(this.cbxStoreProduct_EditValueChanged);
             // 
             // gridView1
@@ -660,6 +708,9 @@ namespace ShopManager.AppForms
             this.cbxCustomers.Properties.PopupView = this.searchLookUpEdit1View;
             this.cbxCustomers.Size = new System.Drawing.Size(230, 26);
             this.cbxCustomers.TabIndex = 5;
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.cbxCustomers, conditionValidationRule5);
             // 
             // searchLookUpEdit1View
             // 
@@ -802,6 +853,9 @@ namespace ShopManager.AppForms
             this.txtSum.Properties.ReadOnly = true;
             this.txtSum.Size = new System.Drawing.Size(230, 26);
             this.txtSum.TabIndex = 18;
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtSum, conditionValidationRule6);
             // 
             // txtSumAfterPercent
             // 
@@ -814,6 +868,9 @@ namespace ShopManager.AppForms
             this.txtSumAfterPercent.Properties.ReadOnly = true;
             this.txtSumAfterPercent.Size = new System.Drawing.Size(230, 26);
             this.txtSumAfterPercent.TabIndex = 18;
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule7.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtSumAfterPercent, conditionValidationRule7);
             // 
             // txtPercentPrice
             // 
@@ -834,6 +891,10 @@ namespace ShopManager.AppForms
             this.txtCurrency.Properties.ReadOnly = true;
             this.txtCurrency.Size = new System.Drawing.Size(139, 26);
             this.txtCurrency.TabIndex = 15;
+            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule8.ErrorText = "This value is not valid";
+            conditionValidationRule8.Value1 = "0";
+            this.dxValidationProvider1.SetValidationRule(this.txtCurrency, conditionValidationRule8);
             // 
             // txtUnits
             // 
@@ -844,6 +905,9 @@ namespace ShopManager.AppForms
             this.txtUnits.Properties.ReadOnly = true;
             this.txtUnits.Size = new System.Drawing.Size(139, 26);
             this.txtUnits.TabIndex = 12;
+            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule9.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.txtUnits, conditionValidationRule9);
             // 
             // txtNumbers
             // 
@@ -958,5 +1022,7 @@ namespace ShopManager.AppForms
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private System.Windows.Forms.Label label5;
         private DevExpress.XtraEditors.TextEdit txtSum;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraEditors.SimpleButton btnPrinter;
     }
 }

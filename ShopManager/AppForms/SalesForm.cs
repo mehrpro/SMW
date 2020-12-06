@@ -34,7 +34,6 @@ namespace ShopManager.AppForms
 
             cbxStoreProduct.Properties.DisplayMember = "ProductList.ProductName";
             cbxStoreProduct.Properties.ValueMember = "StoreId";
-
         }
 
 
@@ -87,6 +86,7 @@ namespace ShopManager.AppForms
         {
             CheckSalerGridControl();
             SalerGridControl.DataSource = _storeProduct;
+            gridViewInvoiceList.RefreshData();
         }
 
         private async void SalesForm_Load(object sender, EventArgs e)
@@ -117,18 +117,15 @@ namespace ShopManager.AppForms
 
         private StoreProductViewModel GetViewModel()
         {
+     
             var newModel = new StoreProductViewModel
             {
                 Customers_FK = Convert.ToInt32(cbxCustomers.EditValue),
                 OrderDate = dateInvoice.DateTime,
                 InvoiceType_FK = 2,
                 SumPrice = Convert.ToDouble(txtSum.EditValue),
-                StoreId = 0,
                 ProductName = cbxStoreProduct.Text,
-                ProductList_FK = Convert.ToInt32(cbxStoreProduct.EditValue),
-                PurchaseInvoice_FK = 0,
-                Orders_FK = 0,
-                StoreId_FK = 0,
+                StoreId_FK = Convert.ToInt32(cbxStoreProduct.EditValue),
                 Numbers = Convert.ToDouble(numNumbers.EditValue),
                 Price = Convert.ToDouble(txtCurrency.EditValue),
                 UnitNam = txtUnits.Text,
@@ -159,8 +156,6 @@ namespace ShopManager.AppForms
                 _storeProduct.Add(GetViewModel());
                 ClearItem();
                 await UpdateGridControl();
-
-
             }
         }
 
@@ -191,6 +186,31 @@ namespace ShopManager.AppForms
         private void numTakfif_EditValueChanged(object sender, EventArgs e)
         {
             Sumer();
+        }
+
+        private async void btnSaveButton_Click(object sender, EventArgs e)
+        {
+            if (_storeProduct.Count > 0)
+            {
+                if (await  _goodsClass.AddOrders(_storeProduct))
+                {
+                    PublicMessage.SuccessesSaveMessage(Text);
+                    ClearForm();
+                }
+                else
+                    PublicMessage.ErrorSaveMessage(Text);
+            }
+            else
+            {
+                PublicMessage.ComplateFormMessage(Text);
+            }
+        }
+
+        private async void ClearForm()
+        {
+            cbxStoreProduct.EditValue = cbxCustomers.EditValue = null;
+            _storeProduct = new List<StoreProductViewModel>();
+            await UpdateGridControl();
         }
     }
 }

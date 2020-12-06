@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShopManager.Models;
@@ -43,6 +44,12 @@ namespace ShopManager.Repositories
         /// </summary>
         /// <returns></returns>
         Task<List<StoreProductList>> GetStoreProduct();
+        /// <summary>
+        /// ثبت سفارش و کسر از انبار
+        /// </summary>
+        /// <param name="viewModels">ریز سفارش</param>
+        /// <returns></returns>
+        Task<bool> AddOrders(List<StoreProductViewModel> viewModels);
 
     }
 
@@ -187,7 +194,70 @@ namespace ShopManager.Repositories
 
         public async Task<List<StoreProductList>> GetStoreProduct()
         {
-            return await _context.StoreProductLists.Include(x=>x.ProductList).Include(x=>x.ProductList.Unit).Include(x=>x.PurchaseInvoicy).Include(x=>x.PurchaseInvoicy.Saller).ToListAsync();
+            return await _context.StoreProductLists.Where(x=>x.Numbers > 0).Include(x=>x.ProductList).Include(x=>x.ProductList.Unit).Include(x=>x.PurchaseInvoicy).Include(x=>x.PurchaseInvoicy.Saller).ToListAsync();
+        }
+
+        public async Task<bool> AddOrders(List<StoreProductViewModel> viewModels)
+        {
+            var now = DateTime.Now;
+            using (var trans = _context.Database.BeginTransaction())
+            {
+                try
+                {
+                    var newOrder = new Order
+                    {
+                        OrderId = 0,
+                        Customers_FK = viewModels[0].Customers_FK,
+                        OrderDate = viewModels[0].OrderDate,
+                        InvoiceType_FK = viewModels[0].InvoiceType_FK,
+                        Enabled = true,
+                        OrderRegister = now,
+                        AppUser_FK = PublicValues.UserID,
+                        SumPrice = viewModels.Sum(x=>x.SumAfterPercent),
+                    };
+                    _context.Orders.Add(newOrder);
+                    await _context.SaveChangesAsync();
+
+                    foreach (var itemDetails in viewModels)
+                    {
+                        var newDetails = new OrderDetail
+                        {
+                            Orders_FK = newOrder.OrderId,
+                            StoreId_FK = itemDetails.StoreId_FK,
+                            Numbers = itemDetails.Numbers,
+                            Price = itemDetails.Price,
+                            Percent = itemDetails.Percent,
+                            PercentPrice = itemDetails.PercentPrice,
+                            SumPrice = itemDetails.SumPrice,
+                            SumAfterPercent = itemDetails.SumAfterPercent,
+                            InvoiceType_FK = itemDetails.InvoiceType_FK,
+                        };
+                        _context.OrderDetails.Add(newDetails);
+                    }
+
+                    foreach (var removeItem in viewModels)
+                    {
+                        var resultAsync =
+                            await _context.StoreProductLists.SingleOrDefaultAsync(x =>
+                                x.StoreId == removeItem.StoreId_FK);
+                        if (resultAsync ==null || resultAsync.Numbers == 0)
+                        {
+                            trans.Rollback();
+                            return false;
+                        }
+                        resultAsync.Numbers -= removeItem.Numbers;
+                    }
+
+                    await _context.SaveChangesAsync();
+                    trans.Commit();
+                    return true;
+                }
+                catch 
+                {
+                    trans.Rollback();
+                    return false;
+                }
+            }
         }
     }
 }
