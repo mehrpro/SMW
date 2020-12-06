@@ -93,6 +93,12 @@
     <Compile Include="AppForms\PurchaseInvoiceForm.Designer.cs">
       <DependentUpon>PurchaseInvoiceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForms\ReturnOfGoodsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\ReturnOfGoodsForm.Designer.cs">
+      <DependentUpon>ReturnOfGoodsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\SalesForm.cs">
       <SubType>Form</SubType>
     </Compile>

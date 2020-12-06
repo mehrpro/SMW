@@ -108,6 +108,8 @@ namespace ShopManager.AppForms
                 
                 return;
             }
+
+            numNumbers.Properties.MinValue = numPercent.Properties.MinValue = 0;
             txtNumbers.EditValue = selectedData.Numbers;
             numNumbers.Properties.MaxValue = (decimal) selectedData.Numbers;
             txtUnits.EditValue = selectedData.ProductList.Unit.UnitName;
