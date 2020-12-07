@@ -40,7 +40,7 @@ namespace ShopManager.AppForms
             await CustomersList();
         }
 
-        private void cbxCustomers_EditValueChanged(object sender, EventArgs e)
+        private async void cbxCustomers_EditValueChanged(object sender, EventArgs e)
         {
             var select = (Customer) cbxCustomers.GetSelectedDataRow();
             if (select == null)
@@ -49,7 +49,9 @@ namespace ShopManager.AppForms
                
 
             }
-            
+
+            cbxInvoiceList.Properties.DataSource = await _goodsClass.GetOrdersListByCustomerId(select.CustomerId);
+
         }
 
         private async void cbxInvoiceList_EditValueChanged(object sender, EventArgs e)
@@ -62,7 +64,8 @@ namespace ShopManager.AppForms
             }
 
             txtNewSumInvoice.EditValue = txtSumInvoice.EditValue = selectFactor.SumPrice;
-            OrderDitailsGridControl.DataSource = await  _goodsClass.get
+            OrderDitailsGridControl.DataSource = await _goodsClass.GetOrderDetaisByOrderId(selectFactor.OrderId);
+
         }
     }
 }

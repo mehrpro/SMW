@@ -51,9 +51,6 @@ namespace ShopManager.AppForms
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.cbxInvoiceList = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.cbxCustomers = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -144,7 +141,7 @@ namespace ShopManager.AppForms
             // btnReturnOfDebtorBooks
             // 
             this.btnReturnOfDebtorBooks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReturnOfDebtorBooks.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.btnReturnOfDebtorBooks.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnReturnOfDebtorBooks.ImageOptions.SvgImage")));
             this.btnReturnOfDebtorBooks.Location = new System.Drawing.Point(190, 56);
             this.btnReturnOfDebtorBooks.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturnOfDebtorBooks.Name = "btnReturnOfDebtorBooks";
@@ -155,7 +152,7 @@ namespace ShopManager.AppForms
             // btnReturnOfCash
             // 
             this.btnReturnOfCash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReturnOfCash.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddToList.ImageOptions.SvgImage")));
+            this.btnReturnOfCash.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnReturnOfCash.ImageOptions.SvgImage")));
             this.btnReturnOfCash.Location = new System.Drawing.Point(389, 56);
             this.btnReturnOfCash.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturnOfCash.Name = "btnReturnOfCash";
@@ -166,7 +163,7 @@ namespace ShopManager.AppForms
             // btnReloadFactor
             // 
             this.btnReloadFactor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReloadFactor.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSaveButton.ImageOptions.SvgImage")));
+            this.btnReloadFactor.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnReloadFactor.ImageOptions.SvgImage")));
             this.btnReloadFactor.Location = new System.Drawing.Point(588, 56);
             this.btnReloadFactor.Margin = new System.Windows.Forms.Padding(2);
             this.btnReloadFactor.Name = "btnReloadFactor";
@@ -333,41 +330,10 @@ namespace ShopManager.AppForms
             this.gridView1.Appearance.VertLine.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView1.Appearance.ViewCaption.Options.UseTextOptions = true;
             this.gridView1.Appearance.ViewCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn7,
-            this.gridColumn8,
-            this.gridColumn9});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "مشتری";
-            this.gridColumn7.FieldName = "CustomerName";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 1;
-            this.gridColumn7.Width = 636;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "شناسه مشتری";
-            this.gridColumn8.FieldName = "CustomerId";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 0;
-            this.gridColumn8.Width = 217;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "تلفن";
-            this.gridColumn9.FieldName = "CustomerMobile";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 2;
-            this.gridColumn9.Width = 209;
             // 
             // label2
             // 
@@ -717,9 +683,6 @@ namespace ShopManager.AppForms
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SearchLookUpEdit cbxInvoiceList;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.SearchLookUpEdit cbxCustomers;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;

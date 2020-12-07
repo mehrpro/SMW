@@ -79,7 +79,7 @@ namespace ShopManager.AppForms
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.GoodsRibbonPage,
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(759, 175);
+            this.ribbonControl1.Size = new System.Drawing.Size(759, 174);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // NewGoodsButton
@@ -161,6 +161,7 @@ namespace ShopManager.AppForms
             this.btnReturnProduct.Id = 13;
             this.btnReturnProduct.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnReturnProduct.ImageOptions.SvgImage")));
             this.btnReturnProduct.Name = "btnReturnProduct";
+            this.btnReturnProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReturnProduct_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -227,11 +228,11 @@ namespace ShopManager.AppForms
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem2);
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem3);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 485);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 486);
             this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(2);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(759, 36);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(759, 35);
             // 
             // ribbonPage2
             // 

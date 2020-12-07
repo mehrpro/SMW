@@ -77,5 +77,17 @@ namespace ShopManager.AppForms
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
+
+        private void btnReturnProduct_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (var c in this.MdiChildren) c.Close();
+            var frm = _container.GetInstance<ReturnOfGoodsForm>();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.ControlBox = false;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
     }
 }
