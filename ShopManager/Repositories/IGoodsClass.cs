@@ -4,7 +4,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dasync.Collections;
 using ShopManager.Models;
+using Dasync.Collections;
 using ShopManager.ViewModels.Goods;
 
 namespace ShopManager.Repositories
@@ -50,6 +52,13 @@ namespace ShopManager.Repositories
         /// <param name="viewModels">ریز سفارش</param>
         /// <returns></returns>
         Task<bool> AddOrders(List<StoreProductViewModel> viewModels);
+
+        /// <summary>
+        /// ریز فاکتور بر اساس شناسه فاکتور
+        /// </summary>
+        /// <param name="orderId">شناسه فاکتور</param>
+        /// <returns></returns>
+        Task<List<StoreProductViewModel>> GetOrderDetaisByOrderId(int orderId);
 
     }
 
@@ -258,6 +267,16 @@ namespace ShopManager.Repositories
                     return false;
                 }
             }
+        }
+
+        public async Task<List<StoreProductViewModel>> GetOrderDetaisByOrderId(int orderId)
+        {
+            var listResult = new List<StoreProductViewModel>();
+            var qry = await _context.Orders.Where(x => x.OrderId == orderId).Include(x => x.OrderDetails).ToListAsync();
+            await listResult.ParallelForEachAsync()
+
+
+
         }
     }
 }
