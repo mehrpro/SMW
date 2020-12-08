@@ -113,6 +113,7 @@ namespace ShopManager.AppForms
             this.groupControl1.Size = new System.Drawing.Size(1100, 481);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "برگشت کالا یا فاکتور";
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // btnPrinter
             // 
@@ -137,6 +138,7 @@ namespace ShopManager.AppForms
             this.btnCloseButton.Size = new System.Drawing.Size(94, 40);
             this.btnCloseButton.TabIndex = 26;
             this.btnCloseButton.Text = "بستن";
+            this.btnCloseButton.Click += new System.EventHandler(this.btnCloseButton_Click);
             // 
             // btnReturnOfDebtorBooks
             // 
@@ -170,6 +172,7 @@ namespace ShopManager.AppForms
             this.btnReloadFactor.Size = new System.Drawing.Size(190, 40);
             this.btnReloadFactor.TabIndex = 23;
             this.btnReloadFactor.Text = "بارگذاری مجدد فاکتور";
+            this.btnReloadFactor.Click += new System.EventHandler(this.btnReloadFactor_Click);
             // 
             // dateInvoice
             // 
@@ -567,6 +570,7 @@ namespace ShopManager.AppForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // gridColumn2
             // 

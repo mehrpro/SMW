@@ -283,36 +283,39 @@ namespace ShopManager.Repositories
                 .ToListAsync();
         }
 
-        private void ParraModel(OrderDetail order)
-        {
-            var newOrder = new StoreProductViewModel();
-            newOrder.Customers_FK = order.Order.Customers_FK;
-            newOrder.OrderDate = order.Order.OrderDate;
-            newOrder.InvoiceType_FK = order.InvoiceType_FK;
-            newOrder.SumPrice = order.SumPrice;
-            newOrder.StoreId = order.StoreId_FK;
-            newOrder.ProductName = order.StoreProductList.ProductList.ProductName.ToString();
-            newOrder.ProductList_FK = order.StoreProductList.ProductList_FK;
-            newOrder.PurchaseInvoice_FK = 0;
-            newOrder.Orders_FK = order.Orders_FK;
-            newOrder.StoreId_FK = order.StoreId_FK;
-            newOrder.Numbers = order.Numbers;
-            newOrder.Price = order.Price;
-            newOrder.UnitNam = order.StoreProductList.ProductList.Unit.UnitName;
-            newOrder.Percent = order.Percent;
-            newOrder.PercentPrice = order.PercentPrice;
-            newOrder.SumAfterPercent = order.SumAfterPercent;
-            ResultListStoreModel.Add(newOrder);
-        }
 
-        private List<StoreProductViewModel> ResultListStoreModel;
+
+
         public async Task<List<StoreProductViewModel>> GetOrderDetaisByOrderId(int orderId)
         {
-            var listResult = new List<StoreProductViewModel>();
+            
             var qry = await _context.OrderDetails.Where(x => x.Orders_FK == orderId).Include(x => x.StoreProductList).Include(x=>x.StoreProductList.ProductList).Include(x=>x.StoreProductList.ProductList.Unit).ToListAsync();
-            ResultListStoreModel = new List<StoreProductViewModel>();
-            Parallel.ForEach(qry, x => ParraModel(x));
-            return ResultListStoreModel.AsParallel().OrderBy(x => x.StoreId_FK).ToList();
+            var resultListStoreModel = new List<StoreProductViewModel>();
+
+            foreach (var order in qry)
+            {
+                var newOrder = new StoreProductViewModel();
+                newOrder.Customers_FK = order.Order.Customers_FK;
+                newOrder.OrderDate = order.Order.OrderDate;
+                newOrder.InvoiceType_FK = order.InvoiceType_FK;
+                newOrder.SumPrice = order.SumPrice;
+                newOrder.StoreId = order.StoreId_FK;
+                newOrder.ProductName = order.StoreProductList.ProductList.ProductName.ToString();
+                newOrder.ProductList_FK = order.StoreProductList.ProductList_FK;
+                newOrder.PurchaseInvoice_FK = 0;
+                newOrder.Orders_FK = order.Orders_FK;
+                newOrder.StoreId_FK = order.StoreId_FK;
+                newOrder.Numbers = order.Numbers;
+                newOrder.Price = order.Price;
+                newOrder.UnitNam = order.StoreProductList.ProductList.Unit.UnitName;
+                newOrder.Percent = order.Percent;
+                newOrder.PercentPrice = order.PercentPrice;
+                newOrder.SumAfterPercent = order.SumAfterPercent;
+                resultListStoreModel.Add(newOrder);
+            }
+
+
+            return resultListStoreModel;
         }
     }
 }
