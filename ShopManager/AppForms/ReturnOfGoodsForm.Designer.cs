@@ -161,6 +161,7 @@ namespace ShopManager.AppForms
             this.btnReturnOfCash.Size = new System.Drawing.Size(195, 40);
             this.btnReturnOfCash.TabIndex = 24;
             this.btnReturnOfCash.Text = "کسر از صندوق";
+            this.btnReturnOfCash.Click += new System.EventHandler(this.btnReturnOfCash_Click);
             // 
             // btnReloadFactor
             // 

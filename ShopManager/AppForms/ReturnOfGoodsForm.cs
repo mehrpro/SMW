@@ -119,5 +119,10 @@ namespace ShopManager.AppForms
                 UpdateList();
             }
         }
+
+        private async void btnReturnOfCash_Click(object sender, EventArgs e)
+        {
+            //var result = await  _goodsClass.
+        }
     }
 }

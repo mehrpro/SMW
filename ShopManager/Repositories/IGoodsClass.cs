@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Dasync.Collections;
+
 using ShopManager.Models;
 
 using ShopManager.ViewModels.Goods;
@@ -67,6 +67,12 @@ namespace ShopManager.Repositories
         /// <param name="orderId">شناسه فاکتور</param>
         /// <returns></returns>
         Task<List<StoreProductViewModel>> GetOrderDetaisByOrderId(int orderId);
+        /// <summary>
+        /// برگشت کالا به انبار و حذف از فاکتور
+        /// </summary>
+        /// <param name="viewModels"></param>
+        /// <returns></returns>
+        Task<bool> ReturnStoreProduct(List<StoreProductViewModel> viewModels);
 
     }
 
@@ -316,6 +322,16 @@ namespace ShopManager.Repositories
 
 
             return resultListStoreModel;
+        }
+
+        public async Task<bool> ReturnStoreProduct(List<StoreProductViewModel> viewModels)
+        {
+            foreach (var itemRemove in viewModels)
+            {
+                await _context.OrderDetails.FindAsync(itemRemove.StoreId_FK);
+            }
+
+            return true;
         }
     }
 }
