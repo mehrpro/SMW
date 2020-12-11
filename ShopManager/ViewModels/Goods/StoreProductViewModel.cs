@@ -6,6 +6,8 @@ namespace ShopManager.ViewModels.Goods
     public class StoreProductViewModel
     {
         [Display(AutoGenerateField = false)]
+        public int OrderDetailsId { get; set; }
+        [Display(AutoGenerateField = false)]
         public int Customers_FK { get; set; }
         [Display(AutoGenerateField = false)]
         public DateTime OrderDate { get; set; }
@@ -13,8 +15,8 @@ namespace ShopManager.ViewModels.Goods
         public byte InvoiceType_FK { get; set; }
         [Display(Name = "جمع")]
         public double SumPrice { get; set; }
-        [Display(AutoGenerateField = false)]
-        public int StoreId { get; set; }
+        //[Display(AutoGenerateField = false)]
+        //public int StoreId { get; set; }
         [Display(Name = "کالا")]
         public string ProductName { get; set; }
         [Display(AutoGenerateField = false)]

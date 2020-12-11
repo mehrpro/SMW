@@ -305,7 +305,7 @@ namespace ShopManager.Repositories
                 newOrder.OrderDate = order.Order.OrderDate;
                 newOrder.InvoiceType_FK = order.InvoiceType_FK;
                 newOrder.SumPrice = order.SumPrice;
-                newOrder.StoreId = order.StoreId_FK;
+                newOrder.OrderDetailsId = order.OrderDetailsId;
                 newOrder.ProductName = order.StoreProductList.ProductList.ProductName.ToString();
                 newOrder.ProductList_FK = order.StoreProductList.ProductList_FK;
                 newOrder.PurchaseInvoice_FK = 0;
@@ -326,12 +326,40 @@ namespace ShopManager.Repositories
 
         public async Task<bool> ReturnStoreProduct(List<StoreProductViewModel> viewModels)
         {
-            foreach (var itemRemove in viewModels)
+            using (var trans = _context.Database.BeginTransaction())
             {
-                await _context.OrderDetails.FindAsync(itemRemove.StoreId_FK);
+                try
+                {
+                    foreach (var itemRemove in viewModels)
+                    {
+                        var select = await _context.OrderDetails.FindAsync(itemRemove.OrderDetailsId);
+                        select.InvoiceType_FK = 3;
+                        var selectStore = await _context.StoreProductLists.FindAsync(itemRemove.StoreId_FK);
+                        selectStore.Numbers += itemRemove.Numbers;
+                    }
+                    await _context.SaveChangesAsync();
+
+                    if (await _context.OrderDetails.CountAsync(x => x.InvoiceType_FK == 2) < 1)
+                    {
+                        var selectDetacate = await _context.Orders.FindAsync(viewModels[0].Orders_FK);
+                        selectDetacate.InvoiceType_FK = 3;
+                    }
+                    await _context.SaveChangesAsync();
+
+
+                    trans.Commit();
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+
+
+
             }
 
-            return true;
+        
         }
     }
 }

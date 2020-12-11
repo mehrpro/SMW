@@ -122,7 +122,7 @@ namespace ShopManager.AppForms
 
         private async void btnReturnOfCash_Click(object sender, EventArgs e)
         {
-            //var result = await  _goodsClass.
+            var result = await _goodsClass.ReturnStoreProduct(_tempStoreProductViewModels);
         }
     }
 }
