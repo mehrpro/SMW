@@ -168,18 +168,17 @@
       <DependentUpon>202012052006093_UpdateOrderDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AppUser.cs" />
-    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\DBModel.cs" />
+    <Compile Include="Models\GeneralLedgerEntity.cs" />
     <Compile Include="Models\InvoiceType.cs" />
-    <Compile Include="Models\Logger.cs" />
-    <Compile Include="Models\LogMessage.cs" />
+    <Compile Include="Models\Journal.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\ProductList.cs" />
     <Compile Include="Models\PurchaseInvoiceDetail.cs" />
     <Compile Include="Models\PurchaseInvoicy.cs" />
-    <Compile Include="Models\Saller.cs" />
     <Compile Include="Models\StoreProductList.cs" />
     <Compile Include="Models\Unit.cs" />
     <Compile Include="Program.cs" />

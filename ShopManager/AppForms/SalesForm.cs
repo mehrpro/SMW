@@ -1,15 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using ShopManager.Repositories;
 using ShopManager.StructureMapping;
-using System.Data.Entity;
 using System.Globalization;
 using ShopManager.Models;
 using ShopManager.ViewModels.Goods;

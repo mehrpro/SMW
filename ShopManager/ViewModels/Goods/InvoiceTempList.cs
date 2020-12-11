@@ -1,6 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using ShopManager.Models;
 
 namespace ShopManager.ViewModels.Goods
 {

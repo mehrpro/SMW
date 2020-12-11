@@ -1,14 +1,12 @@
 namespace ShopManager.Models
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     public partial class PurchaseInvoiceDetail
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int InvoiceDetailsId { get; set; }
 
         public int PurchaseInvoiceId_FK { get; set; }

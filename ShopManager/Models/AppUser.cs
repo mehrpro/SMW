@@ -4,21 +4,21 @@ namespace ShopManager.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
-    public partial class AppUser
+    public  class AppUser
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public AppUser()
         {
-            Customers = new HashSet<Customer>();
+           
             Orders = new HashSet<Order>();
             ProductLists = new HashSet<ProductList>();
             PurchaseInvoicies = new HashSet<PurchaseInvoicy>();
-            Sallers = new HashSet<Saller>();
+            Accounts = new HashSet<Account>();
+            Journals = new HashSet<Journal>();
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
 
         [Required]
@@ -36,19 +36,16 @@ namespace ShopManager.Models
 
         public bool Enabled { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Customer> Customers { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
         public virtual ICollection<Order> Orders { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductList> ProductLists { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PurchaseInvoicy> PurchaseInvoicies { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Saller> Sallers { get; set; }
+        public virtual ICollection<Account> Accounts { get; set; }
+
+        public virtual ICollection<Journal> Journals { get; set; }
     }
 }

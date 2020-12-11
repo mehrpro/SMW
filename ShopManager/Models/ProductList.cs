@@ -4,12 +4,10 @@ namespace ShopManager.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("ProductList")]
-    public partial class ProductList
+    public  class ProductList
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ProductList()
         {
             StoreProductLists = new HashSet<StoreProductList>();
@@ -17,6 +15,7 @@ namespace ShopManager.Models
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProductId { get; set; }
 
         [Required]
@@ -26,7 +25,18 @@ namespace ShopManager.Models
         [StringLength(20)]
         public string ProductNumber { get; set; }
 
+
+        [Required]
+        [ForeignKey("Unit")]
         public int UnitId_FK { get; set; }
+        public virtual Unit Unit { get; set; }
+
+
+        [Required]
+        [ForeignKey("AppUser")]
+        public int AppUser_FK { get; set; }
+        public virtual AppUser AppUser { get; set; }
+
 
         public bool Enabled { get; set; }
 
@@ -35,16 +45,14 @@ namespace ShopManager.Models
         [StringLength(250)]
         public string Description { get; set; }
 
-        public int AppUser_FK { get; set; }
 
-        public virtual AppUser AppUser { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
+
+
+
         public virtual ICollection<StoreProductList> StoreProductLists { get; set; }
 
-        public virtual Unit Unit { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PurchaseInvoiceDetail> PurchaseInvoiceDetails { get; set; }
     }
 }

@@ -4,7 +4,6 @@ namespace ShopManager.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     public partial class PurchaseInvoicy
     {
@@ -16,6 +15,7 @@ namespace ShopManager.Models
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PurchaseInvoiceId { get; set; }
 
         public DateTime InvoiceDate { get; set; }
