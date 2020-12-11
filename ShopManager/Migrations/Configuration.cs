@@ -5,14 +5,14 @@ namespace ShopManager.Migrations
     using System;
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ShopManager.Models.DBModel>
+    internal sealed class Configuration : DbMigrationsConfiguration<ShopManager.Models.AppDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(ShopManager.Models.DBModel context)
+        protected override void Seed(ShopManager.Models.AppDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -66,7 +66,7 @@ namespace ShopManager.Migrations
                     InvoiceTypeId = 3,
                     InvoiceName = "مرجوعی",
                 });
-            context.Units.AddOrUpdate(x=>x.UnitId,
+            context.Units.AddOrUpdate(x => x.UnitId,
                 new Unit()
                 {
                     UnitId = 1,
@@ -88,7 +88,15 @@ namespace ShopManager.Migrations
                     Enabled = true,
                     DateRegister = DateTime.Now,
                 });
+            context.GeneralLedgerEntities.AddOrUpdate(x => x.GLEntityID,
 
+                new GeneralLedgerEntity() { GLEntityID = 1, LedgerEntityName = "بستانکاران" },
+            new GeneralLedgerEntity() { GLEntityID = 2, LedgerEntityName = "بدهکاران" },
+            new GeneralLedgerEntity() { GLEntityID = 3, LedgerEntityName = "بانک" },
+            new GeneralLedgerEntity() { GLEntityID = 4, LedgerEntityName = "صندوق" },
+            new GeneralLedgerEntity() { GLEntityID = 5, LedgerEntityName = "هزینه" },
+            new GeneralLedgerEntity() { GLEntityID = 6, LedgerEntityName = "درآمد" },
+            new GeneralLedgerEntity() { GLEntityID = 7, LedgerEntityName = "اموال و اثاثه" });
         }
     }
 }

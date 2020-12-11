@@ -170,7 +170,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AppUser.cs" />
-    <Compile Include="Models\DBModel.cs" />
+    <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\GeneralLedgerEntity.cs" />
     <Compile Include="Models\InvoiceType.cs" />
     <Compile Include="Models\Journal.cs" />

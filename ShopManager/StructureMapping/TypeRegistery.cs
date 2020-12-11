@@ -12,12 +12,12 @@ namespace ShopManager.StructureMapping
             For<IGoodsClass>().Use<GoodsClass>();//.Ctor<DBModel>("context").Is(new DBModel());
 
             //Entity Framework Context
-            For<DBModel>().Use(context => CreateNewContext(context));
+            For<AppDbContext>().Use(context => CreateNewContext(context));
         }
 
-        private DBModel CreateNewContext(IContext context)
+        private AppDbContext CreateNewContext(IContext context)
         {
-            var myContext = new DBModel();
+            var myContext = new AppDbContext();
             myContext.Configuration.ProxyCreationEnabled = false;
             return myContext;
         }

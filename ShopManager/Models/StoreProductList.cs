@@ -17,10 +17,20 @@ namespace ShopManager.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StoreId { get; set; }
 
+
+        [Required]
+        [ForeignKey("ProductList")]
         public int ProductList_FK { get; set; }
         public virtual ProductList ProductList { get; set; }
+
+
+        [Required]
+        [ForeignKey("PurchaseInvoicy")]
         public int PurchaseInvoice_FK { get; set; }
         public virtual PurchaseInvoicy PurchaseInvoicy { get; set; }
+
+
+
         public double Price { get; set; }
 
         public byte Percent { get; set; }

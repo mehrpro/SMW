@@ -48,8 +48,8 @@ namespace ShopManager.Repositories
 
     public class AppUsersManager : IAppUsersManager
     {
-        private DBModel _context;
-        public AppUsersManager(DBModel context)
+        private AppDbContext _context;
+        public AppUsersManager(AppDbContext context)
         {
             _context = context;
         }

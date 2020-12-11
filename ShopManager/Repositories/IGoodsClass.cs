@@ -76,9 +76,9 @@ namespace ShopManager.Repositories
 
     public class GoodsClass : IGoodsClass
     {
-        private DBModel _context;
+        private AppDbContext _context;
 
-        public GoodsClass(DBModel context)
+        public GoodsClass(AppDbContext context)
         {
             _context = context;
         }

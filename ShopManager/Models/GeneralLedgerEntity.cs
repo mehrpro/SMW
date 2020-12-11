@@ -11,7 +11,6 @@ namespace ShopManager.Models
    public class GeneralLedgerEntity
     {
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
 
         public GeneralLedgerEntity()
         {
@@ -30,14 +29,7 @@ namespace ShopManager.Models
 
 
 
-
-
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-
         public virtual ICollection<Journal> Journals { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
 
         public virtual ICollection<Account> Accounts { get; set; }
 

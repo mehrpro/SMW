@@ -9,10 +9,10 @@ namespace ShopManager.Repositories
 {
     public class GenericClass<TEntity>  where TEntity:class
    {
-       private DBModel _context;
+       private AppDbContext _context;
        private DbSet<TEntity> _table;
 
-       public GenericClass(DBModel context)
+       public GenericClass(AppDbContext context)
        {
            _context = context;
            _table = context.Set<TEntity>();

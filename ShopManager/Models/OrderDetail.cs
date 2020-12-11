@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ShopManager.Models
 {
     using System.ComponentModel.DataAnnotations;
-
+    [Table("OrderDetail")]
     public  class OrderDetail
     {
         [Key]
