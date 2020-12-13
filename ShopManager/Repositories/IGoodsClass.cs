@@ -165,7 +165,7 @@ namespace ShopManager.Repositories
                         InvoiceDate = tempLists[0].InvoiceDate,
                         InvoiceNumber = tempLists[0].InvoiceNumber,
                         InvoiceType_FK = tempLists[0].InvoiceType_FK,
-                        Saller_FK = tempLists[0].Saller_FK,
+                        AccountID = tempLists[0].Saller_FK,
                         DateRegister = now,
                         Enabled = true,
                         AppUser_FK = tempLists[0].AppUser_FK,
@@ -215,7 +215,11 @@ namespace ShopManager.Repositories
 
         public async Task<List<StoreProductList>> GetStoreProduct()
         {
-            return await _context.StoreProductLists.Where(x=>x.Numbers > 0).Include(x=>x.ProductList).Include(x=>x.ProductList.Unit).Include(x=>x.PurchaseInvoicy).Include(x=>x.PurchaseInvoicy.Saller).ToListAsync();
+            return await _context.StoreProductLists.Where(x=>x.Numbers > 0)
+                .Include(x=>x.ProductList)
+                .Include(x=>x.ProductList.Unit)
+                .Include(x=>x.PurchaseInvoicy)
+                .Include(x=>x.PurchaseInvoicy.Account).ToListAsync();
         }
 
         public async Task<bool> AddOrders(List<StoreProductViewModel> viewModels)
@@ -228,7 +232,7 @@ namespace ShopManager.Repositories
                     var newOrder = new Order
                     {
                         OrderId = 0,
-                        Customers_FK = viewModels[0].Customers_FK,
+                        AccountID = viewModels[0].Customers_FK,
                         OrderDate = viewModels[0].OrderDate,
                         InvoiceType_FK = viewModels[0].InvoiceType_FK,
                         Enabled = true,
@@ -283,8 +287,7 @@ namespace ShopManager.Repositories
 
         public async Task<List<Order>> GetOrdersListByCustomerId(int customerId)
         {
-            return await _context.Orders.Where(x => x.Customers_FK == customerId).Include(x => x.Customer)
-                .ToListAsync();
+            return await _context.Orders.Where(x => x.AccountID == customerId).ToListAsync();
         }
 
 
@@ -299,7 +302,7 @@ namespace ShopManager.Repositories
             foreach (var order in qry)
             {
                 var newOrder = new StoreProductViewModel();
-                newOrder.Customers_FK = order.Order.Customers_FK;
+                newOrder.Customers_FK = order.Order.AccountID;
                 newOrder.OrderDate = order.Order.OrderDate;
                 newOrder.InvoiceType_FK = order.InvoiceType_FK;
                 newOrder.SumPrice = order.SumPrice;

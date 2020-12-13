@@ -26,24 +26,24 @@ namespace ShopManager.Repositories
         /// </summary>
         /// <param name="saller">تامین کننده</param>
         /// <returns></returns>
-        Task<bool> AddNewSaller(Saller saller);
+        Task<bool> AddNewSaller(Account saller);
         /// <summary>
         /// لیست تامین کنندگان
         /// </summary>
         /// <returns></returns>
-        Task<List<Saller>> GetSallerList();
+        Task<List<Account>> GetSallerList();
 
         /// <summary>
         /// افزودن مشتری جدید
         /// </summary>
         /// <param name="customer">مشتری</param>
         /// <returns></returns>
-        Task<bool> AddNewCustomers(Customer customer);
+        Task<bool> AddNewCustomers(Account customer);
         /// <summary>
         /// لیست مشتریان
         /// </summary>
         /// <returns></returns>
-        Task<List<Customer>> GetAllCustomer();
+        Task<List<Account>> GetAllCustomer();
     }
 
     public class AppUsersManager : IAppUsersManager
@@ -77,24 +77,27 @@ namespace ShopManager.Repositories
             return user != null ? user : null;
         }
 
-        public async Task<bool> AddNewSaller(Saller saller)
+        public async Task<bool> AddNewSaller(Account saller)
         {
             try
             {
-                if (saller.SallerId > 0)
+                if (saller.AccountID > 0)
                 {
-                    var item = await _context.Sallers.FindAsync(saller.SallerId);
-                    item.SallerAddress = saller.SallerAddress;
-                    item.SallerCompany = saller.SallerCompany;
-                    item.SallerMobile = saller.SallerMobile;
-                    item.SallerFaxNumber = saller.SallerFaxNumber;
-                    item.SallerPhoneNumber = saller.SallerPhoneNumber;
-                    item.SallerName = saller.SallerName;
+                    var item = await _context.Accounts.FindAsync(saller.AccountID);
+                    item.Address = saller.Address;
+                    item.Company = saller.Company;
+                    item.Mobile = saller.Mobile;
+                    item.FaxNumber = saller.FaxNumber;
+                    item.PhoneNumber = saller.PhoneNumber;
+                    item.FullName = saller.FullName;
                 }
                 else
                 {
-                    saller.AppUser_FK = PublicValues.UserID;
-                    _context.Sallers.Add(saller);
+                    saller.AppUserID_FK = PublicValues.UserID;
+                    saller.Registered =DateTime.Now;
+                    saller.Enabled = true;
+                    saller.GLEID_FK = 1;
+                    _context.Accounts.Add(saller);
                 }
                 await _context.SaveChangesAsync();
                 return true;
@@ -105,28 +108,29 @@ namespace ShopManager.Repositories
             }
         }
 
-        public async Task<List<Saller>> GetSallerList()
+        public async Task<List<Account>> GetSallerList()
         {
-            return await _context.Sallers.AsNoTracking().ToListAsync();
+            return await _context.Accounts.Where(x=>x.GLEID_FK==1).AsNoTracking().ToListAsync();
         }
 
-        public async Task<bool> AddNewCustomers(Customer customer)
+        public async Task<bool> AddNewCustomers(Account customer)
         {
             try
             {
-                if (customer.CustomerId > 0)
+                if (customer.AccountID > 0)
                 {
-                    var item = await _context.Customers.FindAsync(customer.CustomerId);
-                    item.CustomerName = customer.CustomerName;
-                    item.CustomerMobile = customer.CustomerMobile;
-                    item.CustomerAddress = customer.CustomerAddress;
+                    var item = await _context.Accounts.FindAsync(customer.AccountID);
+                    item.FullName = customer.FullName;
+                    item.Mobile = customer.Mobile;
+                    item.Address = customer.Address;
                 }
                 else
                 {
-                    customer.DateRegister = DateTime.Now;
+                    customer.Registered = DateTime.Now;
                     customer.Enabled = true;
-                    customer.AppUser_FK = PublicValues.UserID;
-                    _context.Customers.Add(customer);
+                    customer.AppUserID_FK = PublicValues.UserID;
+                    customer.GLEID_FK = 2;
+                    _context.Accounts.Add(customer);
                 }
 
                 await _context.SaveChangesAsync();
@@ -138,9 +142,9 @@ namespace ShopManager.Repositories
             }
         }
 
-        public async Task<List<Customer>> GetAllCustomer()
+        public async Task<List<Account>> GetAllCustomer()
         {
-            return await _context.Customers.AsNoTracking().ToListAsync();
+            return await _context.Accounts.Where(x=>x.GLEID_FK==2).AsNoTracking().ToListAsync();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace ShopManager.AppForms
     public partial class CustomersForm : DevExpress.XtraEditors.XtraForm
     {
         private IAppUsersManager _appUsers;
-        private Customer _customer;
+        private Account _customer;
 
         public CustomersForm(IAppUsersManager appUsers)
         {
@@ -21,20 +21,20 @@ namespace ShopManager.AppForms
         private void ClearForm()
         {
             txtDescription.EditValue = txtCustomerName.EditValue = txtCustromerMobile.EditValue = null;
-            _customer = new Customer();
+            _customer = new Account();
         }
         private void GetCustomer()
         {
-            _customer.CustomerName = txtCustomerName.Text;
-            _customer.CustomerMobile = txtCustromerMobile.Text;
-            _customer.CustomerAddress = txtDescription.Text;
+            _customer.FullName = txtCustomerName.Text;
+            _customer.Mobile = txtCustromerMobile.Text;
+            _customer.Address = txtDescription.Text;
         }
 
         private void SetCustomer()
         {
-            txtCustomerName.Text = _customer.CustomerName;
-            txtCustromerMobile.Text = _customer.CustomerMobile;
-            txtDescription.Text = _customer.CustomerAddress;
+            txtCustomerName.Text = _customer.FullName;
+            txtCustromerMobile.Text = _customer.Mobile;
+            txtDescription.Text = _customer.Address;
         }
         private async Task UpdateCustomersList()
         {
@@ -72,7 +72,7 @@ namespace ShopManager.AppForms
             if (gridViewInvoiceList.GetFocusedRowCellValue("CustomerName") != null)
             {
                 ClearForm();
-                _customer = (Customer) gridViewInvoiceList.GetFocusedRow();
+                _customer = (Account) gridViewInvoiceList.GetFocusedRow();
                 SetCustomer();
             }
         }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShopManager.Models
@@ -8,6 +9,12 @@ namespace ShopManager.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AccountID { get; set; }
+
+
+        [Required]
+        [ForeignKey("AppUser")]
+        public int AppUserID_FK { get; set; }
+        public virtual AppUser AppUser { get; set; }
 
         [Required]
         [ForeignKey("GeneralLedgerEntity")]
@@ -35,7 +42,15 @@ namespace ShopManager.Models
         [MaxLength(350)]
         public string Email { get; set; }
 
+        public DateTime Registered { get; set; }
+        public bool Enabled { get; set; }
 
+        [MaxLength(100)]
+        public string Company { get; set; }
+
+
+        [MaxLength(250)]
+        public string Descripton { get; set; }
 
 
     }

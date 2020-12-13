@@ -47,5 +47,7 @@ namespace ShopManager.Models
         public virtual ICollection<Account> Accounts { get; set; }
 
         public virtual ICollection<Journal> Journals { get; set; }
+
+       
     }
 }

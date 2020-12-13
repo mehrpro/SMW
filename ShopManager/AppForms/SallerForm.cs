@@ -7,7 +7,7 @@ namespace ShopManager.AppForms
     public partial class SallerForm : DevExpress.XtraEditors.XtraForm
     {
         private readonly IAppUsersManager _appUsers;
-        private Saller _saller;
+        private Account _saller;
         public SallerForm(IAppUsersManager appUsers)
         {
             _appUsers = appUsers;
@@ -20,17 +20,18 @@ namespace ShopManager.AppForms
             SallerListGridControl.DataSource = await _appUsers.GetSallerList();
             txtAddress.EditValue = txtNameFamily.EditValue =
                 txtCompany.EditValue = txtFax.EditValue = txtMobile.EditValue = txtPhone.EditValue = null;
-            _saller= new Saller();
+            _saller= new Account();
         }
 
         private void GetValues()
         {
-            _saller.SallerName = txtNameFamily.Text.Trim();
-            _saller.SallerCompany = txtCompany.Text.Trim();
-            _saller.SallerMobile = txtMobile.Text.Trim();
-            _saller.SallerPhoneNumber = txtPhone.Text.Trim();
-            _saller.SallerFaxNumber = txtFax.Text.Trim();
-            _saller.SallerAddress = txtAddress.Text.Trim();
+            _saller.FullName = txtNameFamily.Text.Trim();
+            _saller.Company = txtCompany.Text.Trim();
+            _saller.Mobile = txtMobile.Text.Trim();
+            _saller.PhoneNumber = txtPhone.Text.Trim();
+            _saller.FaxNumber = txtFax.Text.Trim();
+            _saller.Address = txtAddress.Text.Trim();
+            _saller.GLEID_FK = 1;
         }
         private async void btnSaveButton_Click(object sender, EventArgs e)
         {
@@ -51,21 +52,21 @@ namespace ShopManager.AppForms
 
         }
 
-        private void SetValues(Saller saller)
+        private void SetValues(Account saller)
         {
-            txtNameFamily.Text = saller.SallerName;
-            txtCompany.Text = saller.SallerCompany;
-            txtMobile.Text = saller.SallerMobile;
-            txtPhone.Text = saller.SallerPhoneNumber;
-            txtFax.Text = saller.SallerFaxNumber;
-            txtAddress.Text = saller.SallerAddress;
+            txtNameFamily.Text = saller.FullName;
+            txtCompany.Text = saller.Company;
+            txtMobile.Text = saller.Mobile;
+            txtPhone.Text = saller.PhoneNumber;
+            txtFax.Text = saller.FaxNumber;
+            txtAddress.Text = saller.Address;
         }
         private void SelectButton_Click(object sender, EventArgs e)
         {
             if (gridView1.GetFocusedRowCellValue("SallerId") != null)
             {
-                _saller = new Saller();
-                _saller = (Saller)gridView1.GetFocusedRow();
+                _saller = new Account();
+                _saller = (Account)gridView1.GetFocusedRow();
                 SetValues(_saller);
             }
         }

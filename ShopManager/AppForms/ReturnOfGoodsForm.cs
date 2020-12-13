@@ -42,7 +42,7 @@ namespace ShopManager.AppForms
 
         private async void cbxCustomers_EditValueChanged(object sender, EventArgs e)
         {
-            var select = (Customer)cbxCustomers.GetSelectedDataRow();
+            var select = (Account)cbxCustomers.GetSelectedDataRow();
             if (select == null)
             {
                 cbxInvoiceList.Properties.DataSource = null;
@@ -50,7 +50,7 @@ namespace ShopManager.AppForms
 
             }
 
-            cbxInvoiceList.Properties.DataSource = await _goodsClass.GetOrdersListByCustomerId(select.CustomerId);
+            cbxInvoiceList.Properties.DataSource = await _goodsClass.GetOrdersListByCustomerId(select.AccountID);
 
         }
 

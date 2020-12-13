@@ -90,8 +90,8 @@ namespace ShopManager.Migrations
                 });
             context.GeneralLedgerEntities.AddOrUpdate(x => x.GLEntityID,
 
-                new GeneralLedgerEntity() { GLEntityID = 1, LedgerEntityName = "بستانکاران" },
-            new GeneralLedgerEntity() { GLEntityID = 2, LedgerEntityName = "بدهکاران" },
+                new GeneralLedgerEntity() { GLEntityID = 1, LedgerEntityName = "فروشندگان" },
+            new GeneralLedgerEntity() { GLEntityID = 2, LedgerEntityName = "مشتریان" },
             new GeneralLedgerEntity() { GLEntityID = 3, LedgerEntityName = "بانک" },
             new GeneralLedgerEntity() { GLEntityID = 4, LedgerEntityName = "صندوق" },
             new GeneralLedgerEntity() { GLEntityID = 5, LedgerEntityName = "هزینه" },
